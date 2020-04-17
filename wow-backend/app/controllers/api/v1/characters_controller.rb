@@ -3,8 +3,12 @@ class Api::V1::CharactersController < ApplicationController
   before_action :set_player, only: [:index, :show, :create]
 
   def index
-    character = @player.characters
-    render json: character
+    if @player
+      characters = @player.characters
+    else 
+      characters = Characters.all
+    end
+    render json: characters
   end
 
   def show
@@ -29,7 +33,7 @@ class Api::V1::CharactersController < ApplicationController
   end
 
   def set_player
-    @player = Player.find(params[:account_id])
+    @player = Player.find(params[:player_id])
   end
 
   private

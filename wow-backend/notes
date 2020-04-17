@@ -41,3 +41,6 @@ exit
 
 ----- wow 
 npm install blizzard.js --save
+
+rails g serializer player
+rails g serializer character
