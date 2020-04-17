@@ -1,0 +1,28 @@
+Player
+has_many :characters
+  :name - string
+
+
+Character
+belongs_to :player
+  :player_id - integer, :gender - string,
+  :name - string, :race - string, 
+  :character_class - string
+
+
+---terminal cmd
+
+create-react-app wow-frontend
+rails new wow-backend --api --database=postgresql
+
+check .git: ls -a
+delete .git: rm -rf .git
+
+git rm .env --cached
+git commit -m "Stopped tracking .env File"
+
+rails g resource Player name:string --no-test-framework
+rails g resource Character player_id:integer gender:string name:string race:string character_class:string --no-test-framework
+
+rake db:migrate
+rake db:drop
