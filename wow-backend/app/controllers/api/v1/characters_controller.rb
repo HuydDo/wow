@@ -3,11 +3,12 @@ class Api::V1::CharactersController < ApplicationController
   before_action :set_player, only: [:index, :show, :create]
 
   def index
-    if @player
-      characters = @player.characters
-    else 
-      characters = Characters.all
-    end
+    # binding.pry
+    # if @player
+    #   characters = @player.characters
+    # else 
+      characters = Character.all
+    # end
     render json: characters
   end
 
