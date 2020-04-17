@@ -26,3 +26,12 @@ rails g resource Character player_id:integer gender:string name:string race:stri
 
 rake db:migrate
 rake db:drop
+
+rake db:seed
+rails c
+  Player.first
+  Character.first
+  Character.all
+  Character.all.length
+  Character.destroy_all
+exit

@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Player.delete_all
+Character.delete_all
+
+Player.create([{name: 'BlueSpirit'},{name: 'Panda'},{name: 'Bamboo'}])
+
+Character.create([
+  {gender: 'Female', name: 'Aladea', race: 'Night Elf', character_class: 'Demon Hunter', player_id: Player.all[0].id},
+  {gender: 'Female', name: 'Ocean', race: 'Night Elf', character_class: 'Priest', player_id: Player.all[0].id},
+  {gender: 'Male', name: 'Niterider', race: 'Night Elf', character_class: 'Warrior', player_id: Player.all[1].id},
+  {gender: 'Female', name: 'Moon', race: 'Void Elf', character_class: 'Warlock', player_id: Player.all[2].id}
+])
