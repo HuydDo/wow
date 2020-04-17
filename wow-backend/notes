@@ -38,3 +38,6 @@ rails c
   c = Player.first.characters.new(name: 'test')
   c.save
 exit
+
+----- wow 
+npm install blizzard.js --save
