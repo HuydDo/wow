@@ -34,4 +34,7 @@ rails c
   Character.all
   Character.all.length
   Character.destroy_all
+  Player.first.characters
+  c = Player.first.characters.new(name: 'test')
+  c.save
 exit
