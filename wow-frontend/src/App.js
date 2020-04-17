@@ -21,13 +21,19 @@ class App extends React.Component {
       console.error(err);
     }
   }
-    
   
 
+  // componentDidMount(){
+  //   fetch('http://localhost:3000/api/v1/players/1/characters')
+  //   .then(resp => resp.json())
+  //   .then(data => console.log(data))
+  // }
+    
   render(){
     return (
       <div className="App">
-        {this.props.w}
+        <h3>World of Warcraft</h3>
+        {/* {this.props.w} */}
       </div>
     );
   }
