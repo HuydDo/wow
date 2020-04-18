@@ -1,33 +1,17 @@
 import React from 'react';
+import {connect} from 'react-redux'
 import './App.css';
+import {fetchPlayers} from './actions/fetchPlayers'
+// import {fetchWow} from './actions/fetchWow'
 
-const blizzard = require('blizzard.js').initialize({
-  key: process.env.BLIZZARD_CLIENT_ID,
-  secret: process.env.BLIZZARD_CLIENT_SECRET,
-  origin: 'us',
-  locale: 'en_US'
-});
 
 class App extends React.Component {
-   w = async function example () {
-    try {
-      await blizzard.getApplicationToken()
-        .then(response => {
-          blizzard.defaults.token = response.data.access_token
-        });
-      const item = await blizzard.wow.item({ id: 168185 });
-      console.log(item)
-    } catch (err) {
-      console.error(err);
-    }
-  }
-  
 
-  // componentDidMount(){
-  //   fetch('http://localhost:3000/api/v1/players/1/characters')
-  //   .then(resp => resp.json())
-  //   .then(data => console.log(data))
-  // }
+
+  componentDidMount(){
+    // this.props.fetchWow()
+    this.props.fetchPlayers({type: 'FETCH_PLAYERS', payload: {name: 'Panda'}})
+  }
     
   render(){
     return (
@@ -39,4 +23,7 @@ class App extends React.Component {
   }
 }
 
-export default App;
+
+
+// export default connect(null,{fetchWow})(App);
+export default connect(null,{fetchPlayers})(App);
