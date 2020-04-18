@@ -46,8 +46,7 @@ rails g serializer player
 rails g serializer character
 
 kill process ---
-ps -x
-kill -9 prId
-kill all node processes
-taskkill /f /in node.exe 
+ps ax | grep puma
+kill -9 process number
+
 npm install redux react-redux redux-thunk react-router-dom --save
