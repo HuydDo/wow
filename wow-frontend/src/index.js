@@ -7,7 +7,7 @@ import playerReducer from './reducers/playerReducer'
 // import './index.css';
 import App from './App';
 
-require('dotenv').config()
+// require('dotenv').config()
 
 // const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION__COMPOSE_  || compose
 // let store = createStore(playerReducer, 
