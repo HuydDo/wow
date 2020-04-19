@@ -65,3 +65,7 @@ add binding.pry in Player controller create
   Player.last.name.class
   exit
   Player.last.destroy
+
+  check for state and action payload
+  place debugger in characterInput
+  console: state, action.payload, state.players

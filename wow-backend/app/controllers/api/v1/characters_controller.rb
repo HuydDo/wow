@@ -19,10 +19,12 @@ class Api::V1::CharactersController < ApplicationController
   end
 
   def create
+    # binding.pry
     character = @player.characters.new(character_params)
     # character = Character.new(character_params)
     if character.save
-      render json: character
+      # render json: character
+      render json: @player
     else
       render json: {error: 'Fail to create character'}
     end
@@ -40,7 +42,7 @@ class Api::V1::CharactersController < ApplicationController
   private
 
   def character_params
-    params.require(:character).permit(:gender, :name, :race, :character_class, :player_id)
+    params.require(:character).permit( :name, :gender, :race, :character_class, :player_id)
   end
  
 end

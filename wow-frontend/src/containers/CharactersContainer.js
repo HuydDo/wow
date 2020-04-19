@@ -12,7 +12,7 @@ class CharacterContainer extends React.Component{
   render(){
     return(
       <div>
-        <CharacterInput gender={gender} races={races} classes={classes}/>
+        <CharacterInput player={this.props.player} gender={gender} races={races} classes={classes}/>
         <Characters characters={this.props.player && this.props.player.characters}/>
       </div>
     )
