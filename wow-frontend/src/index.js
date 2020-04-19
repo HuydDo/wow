@@ -6,6 +6,7 @@ import { Provider } from 'react-redux'
 import playerReducer from './reducers/playerReducer'
 // import './index.css';
 import App from './App';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 // require('dotenv').config()
 
@@ -18,7 +19,9 @@ const store = createStore(playerReducer,
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </Provider>, 
   document.getElementById('root'))
 
