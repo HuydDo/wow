@@ -1,12 +1,13 @@
 import React from 'react'
-import {Redirect} from 'react-router-dom'
+// import {Redirect} from 'react-router-dom'
 import CharactersContainer from '../containers/CharactersContainer'
 
 const Player = (props) => {
   // console.log(props)
 
-  let player = props.players[props.match.params.id - 1]
-  console.log(player)
+  // let player = props.players[props.match.params.id - 1]
+  let player = props.players.filter(player => player.id === parseInt(props.match.params.id))[0]
+  // console.log(player)
   
   return(
     <div>

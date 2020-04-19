@@ -1,6 +1,7 @@
 import React from 'react'
-import {Route, Link} from 'react-router-dom'
-import Player from './Player'
+import {Link} from 'react-router-dom'
+// import Player from './Player'
+
 const Players = (props) => {
 
   return (

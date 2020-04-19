@@ -1,10 +1,14 @@
 import React from 'react'
 
-// export default function Characters(props) {
+// function Characters(props) {
 const Characters = (props) => {
   return (
     <div>
-      Characters
+      {props.characters && props.characters.map(character => 
+        <li key={character.id}>
+          {character.name} - {character.gender} - {character.race} - {character.character_class}
+        </li>
+      )}
     </div>
   )
 }
