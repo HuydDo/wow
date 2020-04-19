@@ -10,7 +10,7 @@ belongs_to :player
   :character_class - string
 
 
----terminal cmd
+--- terminal cmd
 
 create-react-app wow-frontend
 rails new wow-backend --api --database=postgresql
@@ -39,14 +39,29 @@ rails c
   c.save
 exit
 
------ wow 
+--- wow 
 npm install blizzard.js --save
 
 rails g serializer player
 rails g serializer character
 
-kill process ---
+--- kill process 
 ps ax | grep puma
 kill -9 process number
 
 npm install redux react-redux redux-thunk react-router-dom --save
+
+npm install dotenv
+
+--- check backend controller is called 
+add binding.pry in Player controller create
+  params, player_params, player_params["name"] = player_params[:name]
+  player_params[:name].class
+  exit pry (ctrl+C)
+  
+  rails c
+  Player.all
+  Player.last.name
+  Player.last.name.class
+  exit
+  Player.last.destroy
