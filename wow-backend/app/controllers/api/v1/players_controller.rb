@@ -24,6 +24,16 @@ class Api::V1::PlayersController < ApplicationController
     player.destroy
   end
 
+  def update 
+    player = Player.find(params[:id])
+    player.update(name: params["player"]["name"])
+    if player.save
+      render json: player
+    else
+      render json: {error: 'Fail to update player'}
+    end
+  end
+  
   private
 
   def player_params

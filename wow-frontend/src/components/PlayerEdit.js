@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {addPlayer} from '../actions/addPlayer'
+import {editPlayer} from '../actions/editPlayer'
 
-class PlayerInput extends Component{
+class PlayerEdit extends Component{
 
   state = {
     name: ''
@@ -16,7 +16,8 @@ class PlayerInput extends Component{
 
   handleSubmit = (event) => {
     event.preventDefault()
-    this.props.addPlayer(this.state)
+    let player = {...this.state, id: this.props.player.id} 
+    this.props.editPlayer(player)
     this.setState({
       name: ''
     })
@@ -25,7 +26,6 @@ class PlayerInput extends Component{
   render(){
     return(
       <div>
-        <h4>Create new player</h4>
         <form onSubmit={this.handleSubmit}>
           <label>Player Name:</label>
           <input type='text' placeholder='Name' value={this.state.name}
@@ -38,4 +38,4 @@ class PlayerInput extends Component{
 }
 
 
-export default connect(null, {addPlayer})(PlayerInput)
+export default connect(null, {editPlayer})(PlayerEdit)

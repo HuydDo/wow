@@ -74,3 +74,6 @@ add binding.pry in Player controller create
    character = Character.find(params[:id])
    character.destroy
    Player.find(params[:player_id]).characters
+
+   --update player name
+   params["player"]["name"]
