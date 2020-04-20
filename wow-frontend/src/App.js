@@ -3,13 +3,17 @@ import React from 'react';
 // import './App.css';
 import PlayersContainer from './containers/PlayersContainer'
 // import {fetchWow} from './actions/fetchWow'
-
+import { Route } from 'react-router-dom';
+import NavBar from './components/NavBar'
+import Home from './components/Home';
 class App extends React.Component {
     
   render(){
     return (
       <div className="App">
-        <h3>World of Warcraft App</h3>
+        <NavBar/>
+        <hr/>
+        <Route exact path="/" component={Home} />
         <PlayersContainer />
       </div>
     );
