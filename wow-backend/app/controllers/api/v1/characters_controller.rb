@@ -32,7 +32,13 @@ class Api::V1::CharactersController < ApplicationController
 
   def destroy
     character = Character.find(params[:id])
-    character.destroy
+    player = Player.find(character.player_id)
+    if player
+      character.destroy
+      render json: player
+    else
+      render json: {error: 'Fail to delete character'}
+    end
   end
 
   def set_player

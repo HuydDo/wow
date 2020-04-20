@@ -16,9 +16,19 @@ export default function playerReducer(state = {players: []}, action) {
           return player
         }
       })
-
       return {...state, players: players}
       
+    case 'DELETE_CHARACTER':
+    debugger
+    let playersTwo = state.players.map(player => {
+      if (player.id === action.payload.id) {
+        return action.payload
+      } else {
+        return player
+      }
+    })
+    return {...state, players: playersTwo}
+    
     default:
       return state
 

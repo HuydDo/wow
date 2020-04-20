@@ -8,6 +8,12 @@ export const addCharacter = (character, playerId) => {
       body: JSON.stringify(character)
     })
     .then(response => response.json())
-    .then(player => dispatch({type: 'ADD_CHARACTER', payload: player}))
+    .then(player => {
+      if(player.error){
+        alert(player.error)
+      } else {
+        dispatch({type: 'ADD_CHARACTER', payload: player})
+      }
+    })
   }
 }

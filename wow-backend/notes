@@ -47,7 +47,7 @@ rails g serializer character
 
 --- kill process 
 ps ax | grep puma
-kill -9 process number
+kill -9 'process number'
 
 npm install redux react-redux redux-thunk react-router-dom --save
 
@@ -66,6 +66,11 @@ add binding.pry in Player controller create
   exit
   Player.last.destroy
 
-  check for state and action payload
+  ---check for state and action payload
   place debugger in characterInput
   console: state, action.payload, state.players
+
+  ---delete character, verify deleted character: 
+   character = Character.find(params[:id])
+   character.destroy
+   Player.find(params[:player_id]).characters
