@@ -1,5 +1,13 @@
 export default function playerReducer(state = {players: []}, action) {
-//  debugger
+
+  let players = (state) => state.players.map(player => {
+    if (player.id === action.payload.id) {
+      return action.payload
+    } else {
+      return player
+    }
+  })
+
   switch( action.type){
    
     case 'FETCH_PLAYERS':
@@ -9,45 +17,17 @@ export default function playerReducer(state = {players: []}, action) {
       return {...state, players: [...state.players, action.payload] }
     
     case 'ADD_CHARACTER':
-      let players = state.players.map(player => {
-        if (player.id === action.payload.id) {
-          return action.payload
-        } else {
-          return player
-        }
-      })
-      return {...state, players: players}
+      return {...state, players: players(state)}
       
     case 'DELETE_CHARACTER':
-      let playersTwo = state.players.map(player => {
-      if (player.id === action.payload.id) {
-        return action.payload
-      } else {
-        return player
-      }
-    })
-    return {...state, players: playersTwo}
-    
+      return {...state, players: players(state)}
+
     case 'EDIT_PLAYER':
-      let playersThree = state.players.map(player => {
-        if (player.id === action.payload.id) {
-          return action.payload
-        } else {
-          return player
-        }
-      })
-      return {...state, players: playersThree}
+      return {...state, players: players(state)}
 
     case 'DELETE_PLAYER':
-      let playersFour = state.players.map(player => {
-      if (player.id === action.payload.id) {
-        return action.payload
-      } else {
-        return player
-      }
-    })
-    return {...state, players: playersFour}
-      
+      return {...state, players: players(state)}
+
     default:
       return state
 
