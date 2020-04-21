@@ -20,8 +20,14 @@ class Api::V1::PlayersController < ApplicationController
   end
 
   def destroy
+    # binding.pry
     player = Player.find(params[:id])
-    player.destroy
+    if player
+      player.destroy
+      render json: player
+    else
+      render json: {error: 'Fail to delete player'}
+    end
   end
 
   def update 

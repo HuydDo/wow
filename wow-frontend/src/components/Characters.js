@@ -14,7 +14,7 @@ const Characters = (props) => {
       <h4>Characters</h4>
       {props.characters && props.characters.map(character => 
         <li key={character.id}>
-          {character.name} - {character.gender} - {character.race} - {character.character_class}
+          {character.name} - {character.gender} - {character.race} - {character.character_class} {' '}
           <button onClick={() => handleDelete( character)}>Delete</button>
         </li>
       )}

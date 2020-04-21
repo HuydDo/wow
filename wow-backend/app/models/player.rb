@@ -1,4 +1,4 @@
 class Player < ApplicationRecord
-  has_many :characters
+  has_many :characters, dependent: :delete_all
   validates :name, presence: true
 end
