@@ -7,7 +7,7 @@ const Players = (props) => {
     <div>
       {props.players.map(player =>
         <li key={player.id}>
-          <Link to={`/players/${player.id}`}>{player.name}</Link> 
+           <Link to={`/players/${player.id}`}>{player.name}</Link> 
         </li> )}
     </div> 
   )

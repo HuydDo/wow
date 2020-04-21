@@ -1,9 +1,8 @@
 class Api::V1::CharactersController < ApplicationController
 
-  before_action :set_player, only: [:index, :show, :create]
+  before_action :set_player, only: [:index, :create]
 
   def index
-    # binding.pry
     # if @player
     #   characters = @player.characters
     # else 
@@ -19,7 +18,6 @@ class Api::V1::CharactersController < ApplicationController
   end
 
   def create
-    # binding.pry
     character = @player.characters.new(character_params)
     # character = Character.new(character_params)
     if character.save

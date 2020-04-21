@@ -1,4 +1,6 @@
 class Api::V1::PlayersController < ApplicationController
+  
+  before_action :set_player, only: [:show, :destroy, :update]
 
   def index
     player = Player.all
@@ -15,31 +17,31 @@ class Api::V1::PlayersController < ApplicationController
   end
 
   def show
-    player = Player.find(params[:id])
-    render json: player
+    render json: @player
   end
 
   def destroy
-    # binding.pry
-    player = Player.find(params[:id])
-    if player
-      player.destroy
-      render json: player
+    if @player
+      @player.destroy
+      render json: @player
     else
       render json: {error: 'Fail to delete player'}
     end
   end
 
-  def update 
-    player = Player.find(params[:id])
-    player.update(name: params["player"]["name"])
-    if player.save
-      render json: player
+  def update
+    @player.update(name: params["player"]["name"])
+    if @player.save
+      render json: @player
     else
       render json: {error: 'Fail to update player'}
     end
   end
   
+  def set_player
+    @player = Player.find(params[:id])
+  end
+
   private
 
   def player_params

@@ -1,5 +1,5 @@
 import React from 'react'
-// import {Redirect} from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
 import CharactersContainer from '../containers/CharactersContainer'
 import PlayerEdit from './PlayerEdit'
 // import {editPlayer} from '../actions/editPlayer'
@@ -13,7 +13,8 @@ class Player extends React.Component{
   constructor (props){
     super(props)
     this.state = {
-      showComponent: false
+      showComponent: false,
+      showComponent2: false
     }
   }
   
@@ -22,6 +23,9 @@ class Player extends React.Component{
   
   handleDelete = (player) => {
       this.props.deletePlayer(player.id)
+      this.setState({
+        showComponent2: true
+      })
     }
 
   handleEdit = () => {
@@ -43,6 +47,7 @@ class Player extends React.Component{
       {/*player && <PlayerEdit player={player}/>*/}
       {this.state.showComponent &&  player && <PlayerEdit player={player}/> }
 
+      {this.state.showComponent2 && player &&  <Redirect to='/players'/>}
       {player &&  <CharactersContainer player={player}/>}
     </div>
    )}
