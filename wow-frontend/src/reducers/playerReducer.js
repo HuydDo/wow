@@ -1,5 +1,5 @@
 export default function playerReducer(state = {players: []}, action) {
-
+// debugger
   let players = (state) => state.players.map(player => {
     if (player.id === action.payload.id) {
       return action.payload
@@ -26,7 +26,8 @@ export default function playerReducer(state = {players: []}, action) {
       return {...state, players: players(state)}
 
     case 'DELETE_PLAYER':
-      return {...state, players: players(state)}
+      const playersNew = state.players.filter(player => player.id !== action.payload.id )
+      return {...state, players: playersNew}
 
     default:
       return state

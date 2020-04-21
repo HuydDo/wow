@@ -2,6 +2,9 @@ import React from 'react'
 import {Redirect} from 'react-router-dom'
 import CharactersContainer from '../containers/CharactersContainer'
 import PlayerEdit from './PlayerEdit'
+
+import PlayerInput from './PlayerInput'
+
 // import {editPlayer} from '../actions/editPlayer'
 import { connect } from 'react-redux'
 import {deletePlayer} from '../actions/deletePlayer'
@@ -45,7 +48,10 @@ class Player extends React.Component{
       {player && <button onClick={() => this.handleEdit(player)}>Edit</button>}
       </p>
       {/*player && <PlayerEdit player={player}/>*/}
-      {this.state.showComponent &&  player && <PlayerEdit player={player}/> }
+      {/* {this.state.showComponent &&  player && <PlayerEdit player={player}/>} */}
+
+      {this.state.showComponent &&  player && <PlayerInput player={player} type="Edit"/>}
+
 
       {this.state.showComponent2 && player &&  <Redirect to='/players'/>}
       {player &&  <CharactersContainer player={player}/>}
