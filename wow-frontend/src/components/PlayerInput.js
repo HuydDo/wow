@@ -1,9 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {addPlayer} from '../actions/addPlayer'
-
 import {editPlayer} from '../actions/editPlayer'
-
 
 class PlayerInput extends Component{
 
@@ -38,15 +36,15 @@ class PlayerInput extends Component{
     })
   }
 
-  action = () => {
-    if (this.props.type === "Edit"){
-      return {editPlayer}
-      // this.props.editPlayer
-    } else {
-      return {addPlayer}
-      // this.props.addPlayer
-    }
-  }
+  // action = () => {
+  //   if (this.props.type === "Edit"){
+  //     // return {editPlayer}
+  //     return this.props.editPlayer
+  //   } else {
+  //     // return {addPlayer}
+  //     return this.props.addPlayer
+  //   }
+  // }
 
   render(){
     return(
@@ -63,12 +61,18 @@ class PlayerInput extends Component{
   }
 }
 
-// const mapDispatchToProps = dispatch => {
-  
+// #1 Wrap into Dispatch Manually: can not pass this.state outside class
+// const mapDispatchToProps = dispatch => ({
+//    addPlayer: (this.state) => dispatch(addPlayer(this.state)),
+//    editPlayer: (player) => dispatch(player)
+// })
+ 
+//#2 Wrap into Dispatch Automatically with Connect
+const mapDispatchToProps  = {
+   addPlayer ,
+   editPlayer
+}
+ 
+export default connect(null,mapDispatchToProps)(PlayerInput) 
 
-//   return {props: dispatch.props}
-
-// }
-
-export default connect(null,{addPlayer, editPlayer}
-  )(PlayerInput) 
+// export default connect(null,{addPlayer, editPlayer})(PlayerInput) 

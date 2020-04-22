@@ -1,7 +1,7 @@
 import React from 'react'
 import {Redirect} from 'react-router-dom'
 import CharactersContainer from '../containers/CharactersContainer'
-import PlayerEdit from './PlayerEdit'
+// import PlayerEdit from './PlayerEdit'
 
 import PlayerInput from './PlayerInput'
 
@@ -9,8 +9,6 @@ import PlayerInput from './PlayerInput'
 import { connect } from 'react-redux'
 import {deletePlayer} from '../actions/deletePlayer'
 
-// import {Route, Switch} from 'react-router-dom'
-// const Player = (props) => {
 class Player extends React.Component{
 
   constructor (props){
