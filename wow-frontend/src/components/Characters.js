@@ -13,8 +13,8 @@ const Characters = (props) => {
       <h4>{props.characters.length !== 0 ? 'Characters' :null }</h4>
       {props.characters && props.characters.map(character => 
         <li key={character.id}>
-          {character.name} - {character.gender} - {character.race} - {character.character_class} {' '}
-          <button onClick={() => handleDelete( character)}>Delete</button>
+          <p>{character.name} - {character.gender} - {character.race} - {character.character_class} {' '}
+          <button onClick={() => handleDelete( character)}>Delete</button></p>
         </li>
       )}
     </div>

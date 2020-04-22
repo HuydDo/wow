@@ -34,7 +34,7 @@ class CharacterInput extends Component {
         <form onSubmit={this.handleSubmit}>
           <label>Name:</label>
           <input type="text" name="name" value={this.state.name} onChange={this.handleChange}/><br/>
-          
+
           <label>Gender:</label>
           <select name="gender" value={this.state.gender} onChange={this.handleChange}>
             {this.props.gender.map((x,y) => <option key={y}>{x}</option>)}
@@ -48,7 +48,7 @@ class CharacterInput extends Component {
           <label>Class:</label>
           <select name="character_class" value={this.state.character_class} onChange={this.handleChange}>
             {this.props.classes.map((x,y) => <option key={y}>{x}</option>)}
-          </select><br/>
+          </select><br/><br/>
           <input type="submit"/><br/><br/>
           
         </form>

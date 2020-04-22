@@ -3,7 +3,7 @@ import React from 'react';
 const Home = () => {
   return (
     <div>
-      <h3>World of Warcraft App</h3>
+      <h2>World of Warcraft App</h2>
     </div>
   );
 };

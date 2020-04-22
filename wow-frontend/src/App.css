@@ -37,7 +37,107 @@
   }
 } */
 
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('../src/images/wow.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+}
 
-.hidden {
-  list-style-type: none;
+/* .hidden {
+  list-style-type: none
+} */
+
+header {
+  margin: 0 auto;
+  height: 50px;
+}
+
+header, h2 {
+  color: rgb(218, 223, 217);
+  padding: 10px;
+  margin: 0;
+  text-align: center;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+p, h4, label
+, #my-characters, #message {
+  font-size: 0.8em;
+  color: rgb(118, 165, 209);
+  font-family: Helvetica;
+  color: rgb(188, 212, 228);
+  padding: 10px;
+  margin: auto;
+}
+
+li {
+  font-size: 0.9em;
+  list-style: none;
+  /* padding-right: 10px; */
+  margin-left: 0px;
+}
+
+a {
+  color: rgb(118, 165, 209);
+}
+
+a:hover {
+  color: rgb(170, 189, 207);
+}
+
+button {
+  font-size: .65em;
+  color: rgb(28, 63, 179);
+  background-color: rgb(156, 195, 231);
+  border-radius: 10px;
+}
+
+button:hover {
+  color: rgb(7, 93, 150);
+} 
+
+input {
+  font-size: 0.9em;
+}
+
+.container {
+  width: 900px;
+  margin: auto;
+  margin-top: 50px;
+  margin-left: 20px;
+}
+
+input[type=submit] {
+  font-size: .65em;
+  border-radius: 10px; 
+  color: rgb(28, 63, 179);
+  background-color: rgb(156, 195, 231);
+  border-radius: 10px; 
+  margin-left: 10px;
+}
+
+input[type="text"] {
+  width: 150px;
+  height: 20px;
+}
+
+.delete-character-link {
+  color: rgb(187, 233, 22);
+  font-size: 0.8em;
+  border: 1px solid rgb(189, 162, 9);
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 10px;
 }

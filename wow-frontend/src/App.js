@@ -12,7 +12,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <NavBar/>
-        <hr/>
+        {/* <hr/> */}
         <Route exact path="/" component={Home} />
         <PlayersContainer />
       </div>
