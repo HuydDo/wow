@@ -11,7 +11,7 @@ import {deletePlayer} from '../actions/deletePlayer'
 class Player extends React.Component{
 
   constructor (props){
-    console.log(props)
+    
     super(props)
     this.state = {
       showComponent: false,
@@ -50,11 +50,10 @@ class Player extends React.Component{
 
       {this.state.showComponent &&  player && <PlayerInput player={player} type="Edit"/>}
 
-
       {this.state.showComponent2 && player &&  <Redirect to='/players'/>}
       {player &&  <CharactersContainer player={player}/>}
     </div>
    )}
 }
-// export default Player
+
 export default connect(null, {deletePlayer})(Player)

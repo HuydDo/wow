@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {deleteCharacter} from '../actions/deleteCharacter'
 
 const Characters = (props) => {
-  console.log(props.characters)
+  
   const handleDelete = (character) => {
     props.deleteCharacter(character.id, character.player_id)
   }

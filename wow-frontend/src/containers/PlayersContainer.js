@@ -5,7 +5,6 @@ import {fetchPlayers} from '../actions/fetchPlayers'
 import Players from '../components/Players'
 import Player from '../components/Player'
 import PlayerInput from '../components/PlayerInput'
-
 class PlayersContainer extends React.Component{
 
   componentDidMount(){
@@ -30,4 +29,5 @@ const mapStateToProps = state => {
     players: state.players
   })
 }
+
 export default connect(mapStateToProps, {fetchPlayers})(PlayersContainer)

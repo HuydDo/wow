@@ -4,7 +4,6 @@ import {addPlayer} from '../actions/addPlayer'
 import {editPlayer} from '../actions/editPlayer'
 
 import {Redirect} from 'react-router-dom'
-
 class PlayerInput extends Component{
 
   // state = {

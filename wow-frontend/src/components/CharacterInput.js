@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import {addCharacter} from '../actions/addCharacter'
-
 class CharacterInput extends Component {
   
   state = {
@@ -57,6 +56,5 @@ class CharacterInput extends Component {
     )
   }
 }
-
 
 export default connect(null, {addCharacter})(CharacterInput)

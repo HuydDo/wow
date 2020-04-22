@@ -1,5 +1,5 @@
 export default function playerReducer(state = {players: []}, action) {
-// debugger
+
   let players = (state) => state.players.map(player => {
     if (player.id === action.payload.id) {
       return action.payload
@@ -33,5 +33,4 @@ export default function playerReducer(state = {players: []}, action) {
       return state
 
   }
-    
 }
