@@ -3,6 +3,8 @@ import {connect} from 'react-redux'
 import {addPlayer} from '../actions/addPlayer'
 import {editPlayer} from '../actions/editPlayer'
 
+import {Redirect} from 'react-router-dom'
+
 class PlayerInput extends Component{
 
   // state = {
@@ -12,7 +14,8 @@ class PlayerInput extends Component{
   constructor(props){
     super(props)
     this.state = {
-      name: ''
+      name: '',
+      showComponent: false
     }
   }
 
@@ -32,19 +35,10 @@ class PlayerInput extends Component{
     }
 
     this.setState({
-      name: ''
+      name: '',
+      showComponent: true
     })
   }
-
-  // action = () => {
-  //   if (this.props.type === "Edit"){
-  //     // return {editPlayer}
-  //     return this.props.editPlayer
-  //   } else {
-  //     // return {addPlayer}
-  //     return this.props.addPlayer
-  //   }
-  // }
 
   render(){
     return(
@@ -56,6 +50,8 @@ class PlayerInput extends Component{
           name="name" onChange={this.handleChange}/>
           <input type='submit'/>
         </form>
+
+        {this.props.type !== "Edit" && this.state.showComponent  &&  <Redirect to='/players'/>}
       </div>
     )
   }
@@ -68,11 +64,11 @@ class PlayerInput extends Component{
 // })
  
 //#2 Wrap into Dispatch Automatically with Connect
-const mapDispatchToProps  = {
-   addPlayer ,
-   editPlayer
-}
+// const mapDispatchToProps  = {
+//    addPlayer ,
+//    editPlayer
+// }
  
-export default connect(null,mapDispatchToProps)(PlayerInput) 
+// export default connect(null,mapDispatchToProps)(PlayerInput) 
 
-// export default connect(null,{addPlayer, editPlayer})(PlayerInput) 
+export default connect(null,{addPlayer, editPlayer})(PlayerInput) 

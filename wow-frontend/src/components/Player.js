@@ -5,13 +5,13 @@ import CharactersContainer from '../containers/CharactersContainer'
 
 import PlayerInput from './PlayerInput'
 
-// import {editPlayer} from '../actions/editPlayer'
 import { connect } from 'react-redux'
 import {deletePlayer} from '../actions/deletePlayer'
 
 class Player extends React.Component{
 
   constructor (props){
+    console.log(props)
     super(props)
     this.state = {
       showComponent: false,
@@ -39,7 +39,7 @@ class Player extends React.Component{
    const player = this.props.players.filter(player => player.id === parseInt(this.props.match.params.id))[0]
    return(
     <div>
-      <h4>Player Name</h4>
+      <h4>{player ? 'Player Name' : null}</h4>
       {/* {player ? null :<Redirect to='/players'/>} */}
       <p>{player ? player.name : null}{' '}
       {player && <button onClick={() => this.handleDelete(player)}>Delete</button>}
