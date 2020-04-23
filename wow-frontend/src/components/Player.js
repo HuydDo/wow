@@ -48,8 +48,8 @@ class Player extends React.Component {
             <h3> {player ? 'Player Name' : null } </h3> {
             /* {player ? null :<Redirect to='/players'/>} */ } 
             <p> {player ? player.name : null } {' '} 
-            { player && < button onClick = { () => this.handleDelete(player)} > Delete </button>} {
-              player && < button onClick = { () => this.handleEdit(player)} > Edit </button>} 
+            { player && < button onClick = { () => this.handleDelete(player)} > Delete </button>} 
+            { player && < button onClick = { () => this.handleEdit(player)} > Edit </button>} 
             </p> {
                   /*player && <PlayerEdit player={player}/>*/ } {
                   /* {this.state.showComponent &&  player && <PlayerEdit player={player}/>} */ }

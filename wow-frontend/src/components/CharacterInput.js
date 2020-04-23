@@ -56,8 +56,8 @@ class CharacterInput extends Component {
           <label>Class:</label> 
           <select name = "character_class" value = {this.state.character_class} onChange={this.handleChange} > 
             {this.props.classes.map((x, y) => <option key = {y} > {x} </option>)} 
-          </select><br/><br/>
-          <input type = "submit" /> <br/><br/>
+          </select><br/>
+          <input type = "submit" /> <br/>
          </form> 
      </div>
     )

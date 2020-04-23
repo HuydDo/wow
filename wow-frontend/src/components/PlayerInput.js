@@ -53,35 +53,18 @@ class PlayerInput extends Component {
   }
 
   render() {
-    return ( <
-      div >
-      <
-      h3 > {
-        this.props.type === "Edit" ? 'Edit player' : 'Create new player'
-      } < /h3> <
-      form onSubmit = {
-        this.handleSubmit
-      } >
-      <
-      label > Player Name: < /label> <
-      input type = 'text'
-      placeholder = 'Name'
-      value = {
-        this.state.name
-      }
-      name = "name"
-      onChange = {
-        this.handleChange
-      }
-      /> <
-      input type = 'submit' / >
-      <
-      /form>
+    return ( 
+      <div>
+        <h3> {this.props.type === "Edit" ? 'Edit player' : 'Create new player'}</h3> 
+        <form onSubmit = {this.handleSubmit}>
+        <label> Player Name:</label> 
+        <input type = 'text' placeholder = 'Name' value = {this.state.name}
+        name = "name" onChange = {this.handleChange}/><br/>
+         <input type = 'submit' />
+        </form>
 
-      {
-        this.props.type !== "Edit" && this.state.showComponent && < Redirect to = '/players' / >
-      } <
-      /div>
+        {this.props.type !== "Edit" && this.state.showComponent && <Redirect to = '/players' />} 
+      </div>
     )
   }
 }
@@ -100,7 +83,4 @@ class PlayerInput extends Component {
 
 // export default connect(null,mapDispatchToProps)(PlayerInput) 
 
-export default connect(null, {
-  addPlayer,
-  editPlayer
-})(PlayerInput)
+export default connect(null, {addPlayer, editPlayer})(PlayerInput)

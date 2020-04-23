@@ -21,7 +21,14 @@ p, h3, label {
   color: rgb(118, 165, 209);
   font-family: Helvetica;
   color: rgb(188, 212, 228);
+}
+
+h3 {
   margin-left: 20px;
+}
+
+p, label {
+  margin-left: 30px;
   margin-right: 10px
 }
 
@@ -51,7 +58,10 @@ ul.topnav li a:hover:not(.active){ color: rgb(170, 189, 207);}
 li {
   font-size: 0.9em;
   list-style: none;
-  margin-left: 20px;
+}
+
+.players {
+    margin-left: 20px;
 }
 
 a {
@@ -85,12 +95,13 @@ input[type=submit] {
   color: rgb(28, 63, 179);
   background-color: rgb(156, 195, 231);
   border-radius: 10px; 
-  margin-left: 20px;
+  margin-left: 30px;
+  margin-top: 10px;
 }
 
 input[type="text"] {
   width: 150px;
-  height: 15px;
+  height: 13px;
   border-radius: 4px;
 }
 
