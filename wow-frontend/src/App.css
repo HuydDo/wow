@@ -25,6 +25,29 @@ p, h3, label {
   margin-right: 10px
 }
 
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active){ color: rgb(170, 189, 207);}
+
+@media screen and (max-width: 600px) {
+  ul.topnav li {float: none;}
+}
+
 li {
   font-size: 0.9em;
   list-style: none;
@@ -49,7 +72,7 @@ button {
 }
 
 button:hover {
-  color: rgb(7, 93, 150);
+  color: rgb(2, 16, 26);
 } 
 
 input {
@@ -62,7 +85,7 @@ input[type=submit] {
   color: rgb(28, 63, 179);
   background-color: rgb(156, 195, 231);
   border-radius: 10px; 
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 input[type="text"] {
