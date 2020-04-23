@@ -26,7 +26,7 @@
 //   render(){
 //     return(
 //       <div>
-//         <h4>Edit Player</h4>
+//         <h3>Edit Player</h3>
 //         <form onSubmit={this.handleSubmit}>
 //           <label>Player Name:</label>
 //           <input type='text' placeholder='Name' value={this.state.name}

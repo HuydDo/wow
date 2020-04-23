@@ -1,16 +1,26 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import {addPlayer} from '../actions/addPlayer'
-import {editPlayer} from '../actions/editPlayer'
+import React, {
+  Component
+} from 'react'
+import {
+  connect
+} from 'react-redux'
+import {
+  addPlayer
+} from '../actions/addPlayer'
+import {
+  editPlayer
+} from '../actions/editPlayer'
 
-import {Redirect} from 'react-router-dom'
-class PlayerInput extends Component{
+import {
+  Redirect
+} from 'react-router-dom'
+class PlayerInput extends Component {
 
   // state = {
   //   name: ''
   // }
   // 
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
       name: '',
@@ -18,7 +28,7 @@ class PlayerInput extends Component{
     }
   }
 
-  handleChange = (event) =>{
+  handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value
     })
@@ -27,7 +37,10 @@ class PlayerInput extends Component{
   handleSubmit = (event) => {
     event.preventDefault()
     if (this.props.type === "Edit") {
-      let player = {...this.state, id: this.props.player.id} 
+      let player = {
+        ...this.state,
+        id: this.props.player.id
+      }
       this.props.editPlayer(player)
     } else {
       this.props.addPlayer(this.state)
@@ -39,19 +52,36 @@ class PlayerInput extends Component{
     })
   }
 
-  render(){
-    return(
-      <div>
-        <h4>{this.props.type === "Edit"? 'Edit player' : 'Create new player'}</h4>
-        <form onSubmit={this.handleSubmit}>
-          <label>Player Name:</label>
-          <input type='text' placeholder='Name' value={this.state.name}
-          name="name" onChange={this.handleChange}/>
-          <input type='submit'/>
-        </form>
+  render() {
+    return ( <
+      div >
+      <
+      h3 > {
+        this.props.type === "Edit" ? 'Edit player' : 'Create new player'
+      } < /h3> <
+      form onSubmit = {
+        this.handleSubmit
+      } >
+      <
+      label > Player Name: < /label> <
+      input type = 'text'
+      placeholder = 'Name'
+      value = {
+        this.state.name
+      }
+      name = "name"
+      onChange = {
+        this.handleChange
+      }
+      /> <
+      input type = 'submit' / >
+      <
+      /form>
 
-        {this.props.type !== "Edit" && this.state.showComponent  &&  <Redirect to='/players'/>}
-      </div>
+      {
+        this.props.type !== "Edit" && this.state.showComponent && < Redirect to = '/players' / >
+      } <
+      /div>
     )
   }
 }
@@ -61,13 +91,16 @@ class PlayerInput extends Component{
 //    addPlayer: (this.state) => dispatch(addPlayer(this.state)),
 //    editPlayer: (player) => dispatch(player)
 // })
- 
+
 //#2 Wrap into Dispatch Automatically with Connect
 // const mapDispatchToProps  = {
 //    addPlayer ,
 //    editPlayer
 // }
- 
+
 // export default connect(null,mapDispatchToProps)(PlayerInput) 
 
-export default connect(null,{addPlayer, editPlayer})(PlayerInput) 
+export default connect(null, {
+  addPlayer,
+  editPlayer
+})(PlayerInput)

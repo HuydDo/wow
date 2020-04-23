@@ -72,25 +72,27 @@ header, h2 {
   padding-bottom: 30px;
 } */
 
-p, h4, label
-, #my-characters, #message {
+p, h3, label {
   font-size: 0.8em;
   color: rgb(118, 165, 209);
   font-family: Helvetica;
   color: rgb(188, 212, 228);
-  padding: 10px;
-  margin: auto;
+  /* padding: 0px; */
+  /* margin: auto; */
+  margin-left: 20px;
+  margin-right: 10px
 }
 
 li {
   font-size: 0.9em;
   list-style: none;
   /* padding-right: 10px; */
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 a {
   color: rgb(118, 165, 209);
+  text-decoration: none;
 }
 
 a:hover {
@@ -102,7 +104,7 @@ button {
   color: rgb(28, 63, 179);
   background-color: rgb(156, 195, 231);
   border-radius: 10px;
-  margin-left: 10px;
+  margin-left: 5px;
 }
 
 button:hover {
@@ -126,7 +128,7 @@ input[type=submit] {
   color: rgb(28, 63, 179);
   background-color: rgb(156, 195, 231);
   border-radius: 10px; 
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 input[type="text"] {
