@@ -7,19 +7,10 @@ import {
 } from '../actions/deleteCharacter'
 
 const Characters = (props) => {
-  props.characters.sort(function (a, b) {
-    let nameA = a.name.toUpperCase(); // ignore upper and lowercase
-    let nameB = b.name.toUpperCase(); // ignore upper and lowercase
-    if (nameA < nameB) {
-      return -1;
-    }
-    if (nameA > nameB) {
-      return 1;
-    }
-    // names must be equal
-    return 0;
-  })
 
+  // props.characters.sort((a,b) => (a.name > b.name) ? 1 : -1)
+  props.characters.sort((a, b) => (a.name > b.name) ? 1 : (a.name === b.name) ? ((a.gender > b.gender) ? 1 : -1) : -1 )
+ 
   const handleDelete = (character) => {
     props.deleteCharacter(character.id, character.player_id)
   }
