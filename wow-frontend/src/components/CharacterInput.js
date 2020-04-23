@@ -34,82 +34,34 @@ class CharacterInput extends Component {
   }
   render() {
 
-      return ( <
-          div >
-          <
-          h3 > Create character < /h3> <
-          form onSubmit = {
-            this.handleSubmit
-          } >
-          <
-          label > Name: < /label> <
-          input type = "text"
-          name = "name"
-          value = {
-            this.state.name
-          }
-          onChange = {
-            this.handleChange
-          }
-          /><br/ >
+    return ( 
+    <div>
+        
+        <h3> Create character </h3> 
+        <form onSubmit = {this.handleSubmit} >
+          <label > Name: </label> 
+          <input type = "text" name = "name" value = {this.state.name}
+          onChange = {this.handleChange}/><br/ >
 
-          <
-          label > Gender: < /label> <
-          select name = "gender"
-          value = {
-            this.state.gender
-          }
-          onChange = {
-            this.handleChange
-          } > {
-            this.props.gender.map((x, y) => < option key = {
-                y
-              } > {
-                x
-              } < /option>)} <
-              /select><br/ >
+          <label>Gender:</label> 
+          <select name = "gender" value = {this.state.gender} onChange = {this.handleChange}> 
+            {this.props.gender.map((x, y) => 
+            <option key = {y} > { x } </option>)} 
+          </select><br/>
 
-              <
-              label > Race: < /label> <
-              select name = "race"
-              value = {
-                this.state.race
-              }
-              onChange = {
-                this.handleChange
-              } > {
-                this.props.races.map((x, y) => < option key = {
-                    y
-                  } > {
-                    x
-                  } <
-                  /option>)}</select > < br / >
+          <label> Race: </label> 
+          <select name = "race" value = {this.state.race} onChange={this.handleChange}>
+              {this.props.races.map((x, y) => < option key = {y} > { x } </option>)}</select><br/>
 
-                  <
-                  label > Class: < /label> <
-                  select name = "character_class"
-                  value = {
-                    this.state.character_class
-                  }
-                  onChange = {
-                    this.handleChange
-                  } > {
-                    this.props.classes.map((x, y) => < option key = {
-                        y
-                      } > {
-                        x
-                      } < /option>)} <
-                      /select><br/ > < br / >
-                      <
-                      input type = "submit" / > < br / > < br / >
+          <label>Class:</label> 
+          <select name = "character_class" value = {this.state.character_class} onChange={this.handleChange} > 
+            {this.props.classes.map((x, y) => <option key = {y} > {x} </option>)} 
+          </select><br/><br/>
+          <input type = "submit" /> <br/><br/>
+         </form> 
+     </div>
+    )
+  }
+}
 
-                      <
-                      /form> <
-                      /div>
-                    )
-                  }
-                }
-
-                export default connect(null, {
-                  addCharacter
-                })(CharacterInput)
+export default connect(null, {addCharacter})(CharacterInput)
