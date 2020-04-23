@@ -51,26 +51,26 @@ body {
   list-style-type: none
 } */
 
-header {
+/* header {
   margin: 0 auto;
   height: 50px;
-}
+} */
 
 header, h2 {
-  color: rgb(218, 223, 217);
+  color: rgb(175, 191, 209);
   padding: 10px;
   margin: 0;
   text-align: center;
 }
 
-main {
+/* main {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
   grid-gap: 20px;
   padding-top: 10px;
   padding-bottom: 30px;
-}
+} */
 
 p, h4, label
 , #my-characters, #message {
@@ -86,7 +86,7 @@ li {
   font-size: 0.9em;
   list-style: none;
   /* padding-right: 10px; */
-  margin-left: 0px;
+  margin-left: 10px;
 }
 
 a {
@@ -102,6 +102,7 @@ button {
   color: rgb(28, 63, 179);
   background-color: rgb(156, 195, 231);
   border-radius: 10px;
+  margin-left: 10px;
 }
 
 button:hover {
@@ -112,12 +113,12 @@ input {
   font-size: 0.9em;
 }
 
-.container {
+/* .container {
   width: 900px;
   margin: auto;
   margin-top: 50px;
   margin-left: 20px;
-}
+} */
 
 input[type=submit] {
   font-size: .65em;
@@ -130,14 +131,14 @@ input[type=submit] {
 
 input[type="text"] {
   width: 150px;
-  height: 20px;
+  height: 15px;
 }
 
-.delete-character-link {
+/* .delete-character-link {
   color: rgb(187, 233, 22);
   font-size: 0.8em;
   border: 1px solid rgb(189, 162, 9);
   border-radius: 5px;
   padding: 5px;
   margin-left: 10px;
-}
+} */

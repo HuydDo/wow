@@ -6,14 +6,15 @@ import PlayersContainer from './containers/PlayersContainer'
 import { Route } from 'react-router-dom';
 import NavBar from './components/NavBar'
 import Home from './components/Home';
+import About from './components/About';
 class App extends React.Component {
     
   render(){
     return (
       <div className="App">
         <NavBar/>
-        {/* <hr/> */}
         <Route exact path="/" component={Home} />
+        <Route exact path="/About" component={About} />
         <PlayersContainer />
       </div>
     );
