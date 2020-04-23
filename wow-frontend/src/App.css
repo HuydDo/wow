@@ -9,8 +9,8 @@ body {
   background-size: cover;
 }
 
-header, h2 {
-  color: rgb(175, 191, 209);
+header, h2{
+  color: rgb(84, 94, 141);
   padding: 10px;
   margin: 0;
   text-align: center;
@@ -91,5 +91,12 @@ input[type=submit] {
 input[type="text"] {
   width: 150px;
   height: 15px;
+  border-radius: 4px;
 }
 
+select {
+  /* padding: 2px 3px; */
+  border: none;
+  border-radius: 4px;
+  background-color: #f4f5fa;
+}
