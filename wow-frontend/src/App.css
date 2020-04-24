@@ -18,13 +18,13 @@ header, h2{
 
 p, h3, label {
   font-size: 0.8em;
-  color: rgb(118, 165, 209);
   font-family: Helvetica;
   color: rgb(188, 212, 228);
 }
 
 h3 {
   margin-left: 20px;
+  color: rgb(118, 165, 209);
 }
 
 p, label {
@@ -76,13 +76,13 @@ a:hover {
 button {
   font-size: .65em;
   color: rgb(28, 63, 179);
-  background-color: rgb(156, 195, 231);
+  background-color: rgb(118, 176, 230);
   border-radius: 10px;
   margin-left: 5px;
 }
 
-button:hover {
-  color: rgb(2, 16, 26);
+button:hover , input[type=submit]:hover {
+  color: rgb(2, 4, 26);
 } 
 
 input {
@@ -92,12 +92,14 @@ input {
 input[type=submit] {
   font-size: .65em;
   border-radius: 10px; 
-  color: rgb(28, 63, 179);
-  background-color: rgb(156, 195, 231);
+  color: rgb(53, 71, 128);
+  background-color: rgb(118, 176, 230);
   border-radius: 10px; 
   margin-left: 30px;
   margin-top: 10px;
 }
+
+
 
 input[type="text"] {
   width: 150px;

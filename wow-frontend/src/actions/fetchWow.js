@@ -1,4 +1,5 @@
 export function fetchWow() {
+  debugger
   console.log('in fetch wow')
   const blizzard = require('blizzard.js').initialize({
     key: process.env.BLIZZARD_CLIENT_ID,

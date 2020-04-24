@@ -1,8 +1,10 @@
 import React from 'react';
-// import {connect} from 'react-redux'
+import {connect} from 'react-redux'
+import {fetchWow} from './actions/fetchWow'
+
 import './App.css';
 import PlayersContainer from './containers/PlayersContainer'
-// import {fetchWow} from './actions/fetchWow'
+
 import { Route } from 'react-router-dom';
 import NavBar from './components/NavBar'
 import Home from './components/Home';
@@ -21,5 +23,5 @@ class App extends React.Component {
   }
 }
 
-// export default connect(null,{fetchWow})(App);
-export default App;
+export default connect(null,{fetchWow})(App);
+// export default App;

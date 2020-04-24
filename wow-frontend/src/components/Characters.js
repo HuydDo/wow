@@ -1,10 +1,6 @@
 import React from 'react'
-import {
-  connect
-} from 'react-redux'
-import {
-  deleteCharacter
-} from '../actions/deleteCharacter'
+import {connect} from 'react-redux'
+import {deleteCharacter} from '../actions/deleteCharacter'
 
 const Characters = (props) => {
 

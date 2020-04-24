@@ -8,7 +8,7 @@ import './index.css';
 import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-// require('dotenv').config()
+require('dotenv').config()
 
 // const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION__COMPOSE_  || compose
 // let store = createStore(playerReducer, 

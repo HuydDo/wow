@@ -1,18 +1,11 @@
 import React from 'react'
-import {
-  Redirect
-} from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
 import CharactersContainer from '../containers/CharactersContainer'
-// import PlayerEdit from './PlayerEdit'
 
 import PlayerInput from './PlayerInput'
 
-import {
-  connect
-} from 'react-redux'
-import {
-  deletePlayer
-} from '../actions/deletePlayer'
+import {connect} from 'react-redux'
+import {deletePlayer} from '../actions/deletePlayer'
 
 class Player extends React.Component {
 
@@ -20,8 +13,8 @@ class Player extends React.Component {
 
       super(props)
       this.state = {
-        showComponent: false,
-        showComponent2: false
+        showPlayerInput: false,
+        showPlayers: false
       }
     }
 
@@ -31,13 +24,13 @@ class Player extends React.Component {
     handleDelete = (player) => {
       this.props.deletePlayer(player.id)
       this.setState({
-        showComponent2: true
+        showPlayers: true
       })
     }
 
     handleEdit = () => {
       this.setState({
-        showComponent: !this.state.showComponent
+        showPlayerInput: !this.state.showPlayerInput
       })
     }
 
@@ -50,14 +43,10 @@ class Player extends React.Component {
             <p> {player ? player.name : null } {' '} 
             { player && < button onClick = { () => this.handleDelete(player)} > Delete </button>} 
             { player && < button onClick = { () => this.handleEdit(player)} > Edit </button>} 
-            </p> {
-                  /*player && <PlayerEdit player={player}/>*/ } {
-                  /* {this.state.showComponent &&  player && <PlayerEdit player={player}/>} */ }
-
-              {this.state.showComponent && player && < PlayerInput player = {player} type = "Edit" / > }
-
-              {this.state.showComponent2 && player && < Redirect to = '/players' / >} 
-              {player && < CharactersContainer player = {player} />}
+            </p> 
+            {this.state.showPlayerInput && player && <PlayerInput player={player} type ="Edit" />}
+            {this.state.showPlayers && player && <Redirect to = '/players' / >} 
+            {player && <CharactersContainer player = {player} />}
          </div>
         )
        }
