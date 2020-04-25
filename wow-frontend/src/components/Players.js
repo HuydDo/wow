@@ -7,7 +7,7 @@ const Players = (props) => {
     <div>
       <h3>Players</h3>
       {props.players.map(player =>
-        <li key={player.id} class="players">
+        <li key={player.id} className="players">
           <Link to={`/players/${player.id}`}>{player.name}</Link> 
         </li> )}
     </div> 
