@@ -3,10 +3,35 @@ import {connect} from 'react-redux'
 import {deleteCharacter} from '../actions/deleteCharacter'
 
 const Characters = (props) => {
-
+  
   // props.characters.sort((a,b) => (a.name > b.name) ? 1 : -1)
-  props.characters.sort((a, b) => (a.name > b.name) ? 1 : (a.name === b.name) ? ((a.gender > b.gender) ? 1 : -1) : -1 )
+  // props.characters.sort((a, b) => (a.name > b.name) ? 1 : (a.name === b.name) ? ((a.gender > b.gender) ? 1 : -1) : -1 )
  
+
+  props.characters.sort((a, b) => {
+    let nameA = a.name.toUpperCase()
+    let nameB = b.name.toUpperCase()
+    let genderA = a.gender.toUpperCase()
+    let genderB = b.gender.toUpperCase()
+
+  return ( (nameA > nameB) ? 1 : (nameA === nameB) ? ((genderA > genderB) ? 1 : -1) : -1 )
+    // if (nameA < nameB) {
+    //   return -1;
+    // }
+    // if (nameA > nameB) {
+    //   return 1
+    // }
+    // if (nameA === nameB){
+    //   if (genderA > genderB){
+    //     return 1
+    //   }
+    //   if (genderA < genderB){
+    //     return -1
+    //   }
+    // } 
+    // return 0;
+  })
+
   const handleDelete = (character) => {
     props.deleteCharacter(character.id, character.player_id)
   }
