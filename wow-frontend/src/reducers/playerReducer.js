@@ -1,3 +1,6 @@
+import cuid from 'cuid';
+export const cuidFn = cuid;
+
 export default function playerReducer(state = {players: []}, action) {
 
   let players = (state) => state.players.map(player => {
@@ -14,8 +17,14 @@ export default function playerReducer(state = {players: []}, action) {
       return {players: action.payload}
       
     case 'ADD_PLAYER':
-      return {...state, players: [...state.players, action.payload] }
+      // return {...state, players: [...state.players, action.payload] }
     
+      const player = {name: action.payload.name, id: cuidFn()}
+      return {
+        ...state, players: [ ...state.players, player]
+      }
+
+
     case 'ADD_CHARACTER':
       return {...state, players: players(state)}
       

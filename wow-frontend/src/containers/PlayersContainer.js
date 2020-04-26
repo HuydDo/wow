@@ -25,6 +25,7 @@ class PlayersContainer extends React.Component{
 }
 
 const mapStateToProps = state => {
+  console.log(state)
   return ({
     players: state.players
   })

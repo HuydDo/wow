@@ -23,6 +23,8 @@ git commit -m "Stopped tracking .env File"
 
 rails g resource Player name:string --no-test-framework
 rails g resource Character player_id:integer gender:string name:string race:string character_class:string --no-test-framework
+rails g controller sessions --no-test-framework
+rails d controller sessions (for deleting controllers)
 
 rake db:migrate
 rake db:drop

@@ -9,8 +9,14 @@ import { Route } from 'react-router-dom';
 import NavBar from './components/NavBar'
 import Home from './components/Home';
 import About from './components/About';
+
+import {fetchPlayers} from './actions/fetchPlayers'
 class App extends React.Component {
-    
+  
+  // componentDidMount(){
+  //   this.props.fetchPlayers()
+  // }
+
   render(){
     return (
       <div className="App">
@@ -23,5 +29,5 @@ class App extends React.Component {
   }
 }
 
-export default connect(null,{fetchWow})(App);
+export default connect(null,{fetchWow, fetchPlayers})(App);
 // export default App;
