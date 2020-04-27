@@ -13,13 +13,13 @@ import currentUser from './reducers/currentUser.js'
 
 require('dotenv').config()
 
-// const reducer = combineReducers({
-//   playerReducer, 
-//   currentUser
-// })
+const reducer = combineReducers({
+  playerReducer, 
+  currentUser
+})
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__  || compose
-let store = createStore(playerReducer, 
+let store = createStore(reducer, 
   composeEnhancers (applyMiddleware(thunk)))
 
 // const store = createStore(playerReducer, 
