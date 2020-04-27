@@ -8,18 +8,19 @@ import './index.css';
 import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import currentUser from './reducers/currentUser.js'
-
+import currentUser from './reducers/currentUser'
+import loginForm from './reducers/loginForm'
 
 require('dotenv').config()
 
 const reducer = combineReducers({
   playerReducer, 
-  currentUser
+  currentUser,
+  loginForm
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__  || compose
-let store = createStore(reducer, 
+let store = createStore(playerReducer, 
   composeEnhancers (applyMiddleware(thunk)))
 
 // const store = createStore(playerReducer, 
