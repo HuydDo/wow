@@ -1,5 +1,5 @@
 import React from 'react';
-// import {connect} from 'react-redux'
+import {connect} from 'react-redux'
 // import {fetchWow} from './actions/fetchWow'
 
 import './App.css';
@@ -11,8 +11,13 @@ import Home from './components/Home';
 import About from './components/About';
 
 import Login from './components/Login'
+import { getCurrentUser } from './actions/currentUser'
 class App extends React.Component {
   
+  componentDidMount(){
+    this.props.getCurrentUser()
+  }
+
   render(){
     return (
       <div className="App">
@@ -26,4 +31,5 @@ class App extends React.Component {
   }
 }
 // export default connect(null,{fetchWow})(App);
-export default App
+// export default App
+export default connect(null, {getCurrentUser})(App);
