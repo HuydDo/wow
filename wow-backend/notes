@@ -23,8 +23,7 @@ git commit -m "Stopped tracking .env File"
 
 rails g resource Player name:string --no-test-framework
 rails g resource Character player_id:integer gender:string name:string race:string character_class:string --no-test-framework
-rails g controller sessions --no-test-framework
-rails d controller sessions (for deleting controllers)
+
 
 rake db:migrate
 rake db:drop
@@ -80,3 +79,14 @@ add binding.pry in Player controller create
 
    --update player name
    params["player"]["name"]
+
+
+   ---Login
+   http://localhost:3000/rails/info/routes
+   rails g controller sessions --no-test-framework
+   rails d controller sessions (for deleting controllers)
+   byebug -- continue or exit
+   params[:session][:username]
+
+   rails g migration RenamePlayerPasswordToPasswordDigest
+   1:31

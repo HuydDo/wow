@@ -1,10 +1,23 @@
 class Api::V1::SessionsController < ApplicationController
 
   def create
-
+    # byebug
+    @player = Player.find_by(username: params[:session][:username])
+  
+    if @player && @player.authenticate(params[:session][:password])
+      session[:player_id] = @player.id
+      render json: @player
+    else
+      render json: { error: "Invalid Credentials"}
+    end
   end
 
-  def
-
+  def get_current_user
+    if logged_in?
+      render json: current_user
+    else 
+      render json: {error: "No one logged in"}
+    end
   end
+  
 end
