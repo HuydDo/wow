@@ -11,7 +11,7 @@ export default function playerReducer(state = {players: []}, action) {
     }
   })
 
-  switch( action.type){
+  switch(action.type){
    
     case 'FETCH_PLAYERS':
       return {players: action.payload}
