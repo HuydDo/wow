@@ -32,8 +32,10 @@ class Api::V1::PlayersController < ApplicationController
   end
 
   def update
-    @player.update(name: params["player"]["name"])
-    if @player.save
+    
+    # @player.update(name: params["player"]["name"])
+    # if @player.update(name: params["player"]["name"]) 
+    if @player.update(player_params)
       render json: @player
     else
       render json: {error: 'Fail to update player'}

@@ -2,13 +2,26 @@ class Api::V1::CharactersController < ApplicationController
 
   before_action :set_player, only: [:index, :create]
 
+  # before_action :set_character, only: [:show, :update, :destory]
+
+
   def index
     # if @player
     #   characters = @player.characters
     # else 
-      characters = Character.all
+      # characters = Character.all
     # end
+    
+    characters = Character.all
     render json: characters
+
+    # if logged_in?
+    #   @characters = current_user.characters
+    #   render json: @character
+    # else
+    #   render json: {error: "You must be logged in to see characters"}
+    # end
+
   end
 
   def show
@@ -44,6 +57,10 @@ class Api::V1::CharactersController < ApplicationController
   end
 
   private
+
+  def set_character
+    @character = Character.find(params[:id])
+  end
 
   def character_params
     params.require(:character).permit( :name, :gender, :race, :character_class, :player_id)

@@ -1,5 +1,5 @@
-import cuid from 'cuid';
-export const cuidFn = cuid;
+// import cuid from 'cuid';
+// export const cuidFn = cuid;
 
 export default function playerReducer(state = {players: []}, action) {
 // debugger
