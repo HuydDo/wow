@@ -11,6 +11,7 @@ import Home from './components/Home';
 import About from './components/About';
 
 import Login from './components/Login'
+import Logout from './components/Logout'
 import { getCurrentUser } from './actions/currentUser'
 class App extends React.Component {
   
@@ -22,14 +23,28 @@ class App extends React.Component {
     return (
       <div className="App">
         <NavBar/>
-        {/* <Login /> */}
+        {this.props.currentUser ? <Logout/> : <Login/>}
         <Route exact path="/" component={Home} />
         <Route exact path="/About" component={About} />
-        <PlayersContainer />
+        {/* <PlayersContainer /> */}
       </div>
     );
   }
 }
+
+// const mapStateToProps = state => {
+//   return {
+//     currentUser: state.currentUser
+//   }
+// }
+
+const mapStateToProps = ({currentUser}) => {
+  return {
+    currentUser
+  }
+}
+
 // export default connect(null,{fetchWow})(App);
 // export default App
-export default connect(null, {getCurrentUser})(App);
+
+export default connect(mapStateToProps, {getCurrentUser, Logout})(App);

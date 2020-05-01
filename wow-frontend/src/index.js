@@ -20,7 +20,7 @@ const reducer = combineReducers({
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__  || compose
-let store = createStore(playerReducer, 
+let store = createStore(reducer, 
   composeEnhancers (applyMiddleware(thunk)))
 
 // const store = createStore(playerReducer, 
