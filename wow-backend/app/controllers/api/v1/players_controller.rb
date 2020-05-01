@@ -3,12 +3,13 @@ class Api::V1::PlayersController < ApplicationController
   before_action :set_player, only: [:show, :destroy, :update]
 
   def index
+    # binding.pry
+
     player = Player.all
     render json: player
   end
 
   def create
-    # binding.pry
     player = Player.new(player_params)
     if player.save
       render json: player

@@ -2,6 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 const Players = (props) => {
+  debugger
 // console.log(props)
   props.players.sort(function(a,b){
     let nameA = a.name.toUpperCase(); // ignore upper and lowercase
