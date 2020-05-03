@@ -20,8 +20,8 @@ const MyCharacters = props => {
 
   return ( 
     <div>
-      <h3>{props.characters.length > 0 ? 'Characters' : null} </h3> {
-      props.characters && props.characters.map(character =>
+      <h3>{props.characters.length > 0 ? 'Characters' : null} </h3>
+      { props.characters && props.characters.map(character =>
         <li key = {character.id} >
         <p> {character.name} - {character.gender} - {character.race} - {character.character_class} {' '} 
         <button onClick = {() => handleDelete(character)}>Delete</button></p >

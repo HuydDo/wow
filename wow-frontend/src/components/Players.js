@@ -22,13 +22,13 @@ const Players = (props) => {
     return 0;
   })
 
-  
-    let currPlayers = props.players.filter(player => player.id === props.currentUser.id)
+    let currPlayers = (props.players.length >0 && props.currentUser) ? 
+      props.players.filter(player => player.id === props.currentUser.id) : ""
   
     return (
     <div>
-      <h3>Players</h3>
-      { currPlayers.map(player =>
+      <h3>{props.players.length > 0 ? 'Players' : null}</h3>
+      { currPlayers && currPlayers.map(player =>
         <li key={player.id} className="players">
           {/* <p>{props.playerId ? props.playerId : ""}</p> */}
           <Link to={`/players/${player.id}`}>{player.name}</Link> 
