@@ -1,6 +1,10 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
+import {connect} from 'react-redux'
+
+
+
 const Players = (props) => {
 
   props.players.sort(function(a,b){
@@ -18,15 +22,29 @@ const Players = (props) => {
     return 0;
   })
 
-  return (
+  
+    let currPlayers = props.players.filter(player => player.id === props.currentUser.id)
+  
+    return (
     <div>
       <h3>Players</h3>
-      {props.players.map(player =>
+      { currPlayers.map(player =>
         <li key={player.id} className="players">
+          {/* <p>{props.playerId ? props.playerId : ""}</p> */}
           <Link to={`/players/${player.id}`}>{player.name}</Link> 
         </li> )}
     </div> 
   )
 } 
 
-export default Players
+
+
+const mapStateToProps = (state) => {
+    return {
+      currentUser: state.currentUser,
+      players: state.playerReducer.players
+    }
+}
+// export default Players
+
+export default connect(mapStateToProps)(Players)
