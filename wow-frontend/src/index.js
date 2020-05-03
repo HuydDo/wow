@@ -10,18 +10,19 @@ import { BrowserRouter as Router } from 'react-router-dom';
 // import * as serviceWorker from './serviceWorker';
 import currentUser from './reducers/currentUser'
 import loginForm from './reducers/loginForm'
-
+import myCharacters from './reducers/myCharacters'
 require('dotenv').config()
 
 const reducer = combineReducers({
-  players: playerReducer,
+  playerReducer,
   currentUser,
-  loginForm
+  loginForm,
+  myCharacters
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)))
-console.log(store.getState())
+// console.log(store.getState())
 // const store = createStore(reducer, 
 //   compose (applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()))
 

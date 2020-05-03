@@ -12,15 +12,16 @@ class Api::V1::CharactersController < ApplicationController
       # characters = Character.all
     # end
     
-    characters = Character.all
-    render json: characters
+    # characters = Character.all
+    # render json: characters
 
-    # if logged_in?
-    #   @characters = current_user.characters
-    #   render json: @character
-    # else
-    #   render json: {error: "You must be logged in to see characters"}
-    # end
+    if logged_in?
+      # binding pry
+      @characters = current_user.characters
+      render json: @characters
+    else
+      render json: {error: "You must be logged in to see characters"}
+    end
 
   end
 

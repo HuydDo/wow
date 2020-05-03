@@ -1,3 +1,6 @@
+import { resetLoginForm } from './loginForm'
+import { getMyCharacters } from './myCharacters'
+
 //synchronous action creators
 export const setCurrentUser = user => {
   return {
@@ -25,11 +28,13 @@ export const login = credentials => {
       body: JSON.stringify(credentials)
     })
     .then(r => r.json())
-    .then(user => {
-      if (user.error){
-        alert(user.error)
+    .then(response => {
+      if (response.error){
+        alert(response.error)
       } else {
-        dispatch(setCurrentUser(user))
+        dispatch(setCurrentUser(response))
+        // console.log(response)
+        dispatch(resetLoginForm())
       }
     }
     )
@@ -51,7 +56,7 @@ export const logout = () => {
   export const getCurrentUser = () => {
     console.log('Dispatching get current user')
     return dispatch => {
-        return fetch("http://localhost:3000/api/v1/get_current_user", {
+        return fetch(`http://localhost:3000/api/v1/get_current_user`, {
         credentials: "include",
         method: "GET",
         headers: {
@@ -63,7 +68,10 @@ export const logout = () => {
         if (response.error){
           alert(response.error)
         } else {
+          console.log("current user:", response)
           dispatch(setCurrentUser(response))
+          dispatch(getMyCharacters(response.id))
+
         }
       }
       )
