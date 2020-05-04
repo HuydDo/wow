@@ -5,7 +5,7 @@ import {connect} from 'react-redux'
 import './App.css';
 import PlayersContainer from './containers/PlayersContainer'
 
-import { Route } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import NavBar from './components/NavBar'
 import Home from './components/Home';
 import About from './components/About';
@@ -14,7 +14,6 @@ import About from './components/About';
 import { getCurrentUser } from './actions/currentUser'
 
 import Login from './components/Login'
-import Logout from './components/Logout'
 import Signup from './components/Signup'
 class App extends React.Component {
   
@@ -23,15 +22,20 @@ class App extends React.Component {
   }
 
   render(){
+    const { loggedIn } = this.props
     return (
       <div className="App">
-        <NavBar/>
-        <Route exact path="/" component={Home} />
+        { loggedIn ? <NavBar/> : <Home/> }
+        {/* <NavBar/> */}
+        {/* <Route exact path="/" component={Home} /> */}
+        {/* <Switch> */}
         <Route exact path="/About" component={About} />
         <Route exact path='/signup' component={Signup} />
         <Route exact path='/login' component={Login} />
+        {/* </Switch> */}
         {/* <Route exact path='/logout' component={Logout}/> */}
         <PlayersContainer />
+        
       </div>
     );
   }
@@ -54,4 +58,10 @@ class App extends React.Component {
 
 // export default connect(mapStateToProps, {getCurrentUser, Logout})(App);
 
-export default connect(null, {getCurrentUser})(App)
+const mapStateToProps = state => {
+  return ({
+    loggedIn: !!state.currentUser,
+    trips: state.myTrips
+  })
+}
+export default connect(mapStateToProps, {getCurrentUser})(App)

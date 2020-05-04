@@ -11,7 +11,7 @@ import currentUser from './reducers/currentUser'
 import loginForm from './reducers/loginForm'
 import myCharacters from './reducers/myCharacters'
 
-import signupFrom from './reducers/signupForm'
+import signupForm from './reducers/signupForm'
 
 require('dotenv').config()
 
@@ -20,7 +20,7 @@ const reducer = combineReducers({
   currentUser,
   loginForm,
   myCharacters,
-  signupFrom
+  signupForm
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose

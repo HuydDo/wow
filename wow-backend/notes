@@ -90,3 +90,5 @@ add binding.pry in Player controller create
 
    rails g migration RenamePlayerPasswordToPasswordDigest
    1:31
+
+   player.valid?

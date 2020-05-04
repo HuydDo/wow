@@ -4,7 +4,7 @@ import {Route, Switch} from 'react-router-dom'
 import {fetchPlayers} from '../actions/fetchPlayers'
 import Players from '../components/Players'
 import Player from '../components/Player'
-import PlayerInput from '../components/PlayerInput'
+// import PlayerInput from '../components/PlayerInput'
 // import MyCharacters from '../components/MyCharacters'
 class PlayersContainer extends React.Component{
   
@@ -17,7 +17,7 @@ class PlayersContainer extends React.Component{
       <div>
         {/* <MyCharacters /> */}
         <Switch>
-          <Route path='/players/new' component={PlayerInput} />
+          {/* <Route path='/players/new' component={PlayerInput} /> */}
           <Route path='/players/:id' render={(routeProps) => <Player {...routeProps} players={this.props.players}/>} />
           <Route path='/players' render={(routeProps) => <Players {...routeProps} players={this.props.players}/>} />
         </Switch>

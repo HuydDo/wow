@@ -6,7 +6,7 @@ class Api::V1::SessionsController < ApplicationController
   
     if @player && @player.authenticate(params[:session][:password])
       session[:player_id] = @player.id
-      render json: @player
+      render json: @player, status: :ok
     else
       render json: { error: "Invalid Credentials"}
     end

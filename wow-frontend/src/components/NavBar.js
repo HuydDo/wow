@@ -1,21 +1,24 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import Login from './Login'
+// import Login from './Login'
 import Logout from './Logout'
 import { connect } from 'react-redux'
 
-const NavBar = ({currentUser}) => {
+const NavBar = ({currentUser, loggedIn}) => {
   return (
     <div>
       <ul className="topnav" >
-       <li className="navbar"><NavLink to="/" exact>Home</NavLink></li>
+       {/* <li className="navbar"><NavLink to="/" exact>Home</NavLink></li> */}
        <li className="navbar"><NavLink to="/About" exact>About</NavLink></li>
        <li className="navbar"><NavLink to="/players" exact>Player</NavLink></li>
-       <li className="navbar"><NavLink to="/players/new" exact>Create new player</NavLink></li>
-       <button>Login</button>
-       <button>Sign Up</button>
+       {/* <li className="navbar"><NavLink to="/players/new" exact>Create new player</NavLink></li> */}
+       { loggedIn ? <><p>Logged in as {currentUser.name}</p><Logout/></> : null}
        {/* {currentUser ? <h3>Welcome, {currentUser.name}</h3> : ""} 
-       {currentUser ? <Logout/> : <Login/>}  */}
+
+       <button>Login</button>
+       <button>Sign Up</button> */}
+
+       {/* {currentUser ? <Logout/> : <Login/>}  */}
       </ul>
     </div>
   );
@@ -23,7 +26,8 @@ const NavBar = ({currentUser}) => {
 
 const mapStateToProps = ({ currentUser }) => {
   return {
-    currentUser
+    currentUser,
+    loggedIn: !!currentUser
   }
 }
 

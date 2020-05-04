@@ -1,4 +1,5 @@
 import { resetLoginForm } from './loginForm'
+import { resetSignupForm } from './signupForm'
 import { getMyCharacters } from './myCharacters'
 
 //synchronous action creators
@@ -52,30 +53,59 @@ export const logout = () => {
   }
 }
 
-
-  export const getCurrentUser = () => {
-    console.log('Dispatching get current user')
-    return dispatch => {
-        return fetch(`http://localhost:3000/api/v1/get_current_user`, {
-        credentials: "include",
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json"
-        },
-      })
-      .then(r => r.json())
-      .then(response => {
-        if (response.error){
-          alert(response.error)
-        } else {
-          console.log("current user:", response)
-          dispatch(setCurrentUser(response))
-          dispatch(getMyCharacters(response.id))
-
-        }
+// asynchronous action creators
+export const signup = credentials => {
+  console.log('credentials are', credentials)
+  return dispatch => {
+      const playerInfo ={
+        player: credentials
       }
-      )
-        .catch(console.log)
+      return fetch("http://localhost:3000/api/v1/signup", {
+      credentials: "include",
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(playerInfo)
+    })
+    .then(r => r.json())
+    .then(response => {
+      if (response.error){
+        alert(response.error)
+      } else {
+        dispatch(setCurrentUser(response))
+        // console.log(response)
+        dispatch(resetSignupForm())
+      }
     }
+    )
+      .catch(console.log)
   }
+}
+
+export const getCurrentUser = () => {
+  console.log('Dispatching get current user')
+  return dispatch => {
+      return fetch(`http://localhost:3000/api/v1/get_current_user`, {
+      credentials: "include",
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      },
+    })
+    .then(r => r.json())
+    .then(response => {
+      if (response.error){
+        alert(response.error)
+      } else {
+        console.log("current user:", response)
+        dispatch(setCurrentUser(response))
+        dispatch(getMyCharacters(response.id))
+
+      }
+    }
+    )
+      .catch(console.log)
+  }
+}
 

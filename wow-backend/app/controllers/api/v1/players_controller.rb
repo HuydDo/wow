@@ -10,13 +10,17 @@ class Api::V1::PlayersController < ApplicationController
   end
 
   def create
-    # binding.pry
     player = Player.new(player_params)
+    # binding.pry
     if player.save
-      session[:player_id] = player.id
-      render json: player
+      # session[:player_id] = player.id
+      render json: player, status: :created
     else
-      render json: {error: 'Fail to create player'}
+      resp = {
+        error: player.errors.full_messages.to_sentence
+      }
+      render json: resp, status: :unprocessable_entity
+      # render json: {error: 'Fail to create player'}
     end
   end
 
