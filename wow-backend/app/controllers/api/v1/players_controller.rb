@@ -10,8 +10,10 @@ class Api::V1::PlayersController < ApplicationController
   end
 
   def create
+    # binding.pry
     player = Player.new(player_params)
     if player.save
+      session[:player_id] = player.id
       render json: player
     else
       render json: {error: 'Fail to create player'}

@@ -23,10 +23,8 @@ export const getMyCharacters = (playerId) =>{
           if (response.error) {
             alert(response.error)
           } else {
-            console.log(response)
+            // console.log(response)
             dispatch(setMyCharacters(response))
-            // dispatch(setMyCharacters([]))
-
           }
         })
         .catch(console.log)

@@ -12,6 +12,10 @@ import About from './components/About';
 
 
 import { getCurrentUser } from './actions/currentUser'
+
+import Login from './components/Login'
+import Logout from './components/Logout'
+import Signup from './components/Signup'
 class App extends React.Component {
   
   componentDidMount(){
@@ -24,6 +28,9 @@ class App extends React.Component {
         <NavBar/>
         <Route exact path="/" component={Home} />
         <Route exact path="/About" component={About} />
+        <Route exact path='/signup' component={Signup} />
+        <Route exact path='/login' component={Login} />
+        {/* <Route exact path='/logout' component={Logout}/> */}
         <PlayersContainer />
       </div>
     );

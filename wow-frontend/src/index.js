@@ -7,17 +7,20 @@ import playerReducer from './reducers/playerReducer'
 import './index.css';
 import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
-// import * as serviceWorker from './serviceWorker';
 import currentUser from './reducers/currentUser'
 import loginForm from './reducers/loginForm'
 import myCharacters from './reducers/myCharacters'
+
+import signupFrom from './reducers/signupForm'
+
 require('dotenv').config()
 
 const reducer = combineReducers({
   playerReducer,
   currentUser,
   loginForm,
-  myCharacters
+  myCharacters,
+  signupFrom
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose

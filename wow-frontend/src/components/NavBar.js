@@ -12,9 +12,10 @@ const NavBar = ({currentUser}) => {
        <li className="navbar"><NavLink to="/About" exact>About</NavLink></li>
        <li className="navbar"><NavLink to="/players" exact>Player</NavLink></li>
        <li className="navbar"><NavLink to="/players/new" exact>Create new player</NavLink></li>
-       
-       {currentUser ? <h3>Welcome, {currentUser.name}</h3> : ""} 
-       {currentUser ? <Logout/> : <Login/>} 
+       <button>Login</button>
+       <button>Sign Up</button>
+       {/* {currentUser ? <h3>Welcome, {currentUser.name}</h3> : ""} 
+       {currentUser ? <Logout/> : <Login/>}  */}
       </ul>
     </div>
   );

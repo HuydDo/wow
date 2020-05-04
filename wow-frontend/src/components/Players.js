@@ -27,7 +27,7 @@ const Players = (props) => {
   
     return (
     <div>
-      <h3>{props.players.length > 0 ? 'Players' : null}</h3>
+      <h3>{props.currentUser  ? 'Player' : null}</h3>
       { currPlayers && currPlayers.map(player =>
         <li key={player.id} className="players">
           {/* <p>{props.playerId ? props.playerId : ""}</p> */}

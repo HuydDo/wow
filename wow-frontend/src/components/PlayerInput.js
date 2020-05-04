@@ -15,6 +15,8 @@ class PlayerInput extends Component {
     super(props)
     this.state = {
       name: '',
+      // username: '',
+      // password: '',
       showComponent: false
     }
   }
@@ -40,6 +42,8 @@ class PlayerInput extends Component {
 
     this.setState({
       name: '',
+      // username: '',
+      // password: '',
       showComponent: true
     })
   }
@@ -50,9 +54,18 @@ class PlayerInput extends Component {
         <h3> {this.props.type === "Edit" ? 'Edit player' : 'Create new player'}</h3> 
         <form onSubmit = {this.handleSubmit}>
         <label> Player Name:</label> 
-        <input type = 'text' placeholder = 'Name' value = {this.state.name}
+        <input type = 'text' placeholder = 'name' value = {this.state.name}
         name = "name" onChange = {this.handleChange}/><br/>
-         <input type = 'submit' />
+
+        {/* <label> User Name:</label> 
+        <input type = 'text' placeholder = 'username' value = {this.state.username}
+        name = "username" onChange = {this.handleChange}/><br/>
+
+        <label> Password:</label> 
+        <input type = 'password' placeholder = 'password' value = {this.state.password}
+        name = "password" onChange = {this.handleChange}/><br/>
+         */}
+        <input type = 'submit' />
         </form>
 
         {this.props.type !== "Edit" && this.state.showComponent && <Redirect to = '/players' />} 
