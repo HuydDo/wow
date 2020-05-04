@@ -31,10 +31,7 @@ const Login = ({loginFormData, updateLoginForm, login}) => {
 
 }
 
-//this give mes an argument coming to this component
-//that looks like:
-// username: "test"
-// password: "password"
+
 const mapStateToProps = state => {
   return {
    loginFormData: state.loginForm

@@ -15,8 +15,6 @@ class PlayerInput extends Component {
     super(props)
     this.state = {
       name: '',
-      // username: '',
-      // password: '',
       showComponent: false
     }
   }
@@ -42,8 +40,6 @@ class PlayerInput extends Component {
 
     this.setState({
       name: '',
-      // username: '',
-      // password: '',
       showComponent: true
     })
   }
@@ -56,18 +52,8 @@ class PlayerInput extends Component {
         <label> Player Name:</label> 
         <input type = 'text' placeholder = 'name' value = {this.state.name}
         name = "name" onChange = {this.handleChange}/><br/>
-
-        {/* <label> User Name:</label> 
-        <input type = 'text' placeholder = 'username' value = {this.state.username}
-        name = "username" onChange = {this.handleChange}/><br/>
-
-        <label> Password:</label> 
-        <input type = 'password' placeholder = 'password' value = {this.state.password}
-        name = "password" onChange = {this.handleChange}/><br/>
-         */}
         <input type = 'submit' />
         </form>
-
         {this.props.type !== "Edit" && this.state.showComponent && <Redirect to = '/players' />} 
       </div>
     )

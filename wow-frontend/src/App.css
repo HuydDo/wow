@@ -28,9 +28,9 @@ p, h3, label, #spanId {
 
 .topright {
   position: absolute;
-  top: 16px;
-  right: 16px;
-  font-size: 18px;
+  top: 19px;
+  right: 20px; 
+  font-size: 0.7em;
 }
 h3 {
   margin-left: 20px;
@@ -63,6 +63,9 @@ ul.topnav li a:hover:not(.active){ color: rgb(170, 189, 207);}
 
 @media screen and (max-width: 600px) {
   ul.topnav li {float: none;}
+  h2 {
+   text-align: left;
+  }
 }
 
 li {
