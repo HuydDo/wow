@@ -10,7 +10,6 @@ import {deletePlayer} from '../actions/deletePlayer'
 class Player extends React.Component {
 
     constructor(props) {
-
       super(props)
       this.state = {
         showPlayerInput: false,

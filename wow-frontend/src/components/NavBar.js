@@ -11,8 +11,9 @@ const NavBar = ({currentUser, loggedIn}) => {
        <li className="navbar"><NavLink to="/About" exact>About</NavLink></li>
        <li className="navbar"><NavLink to="/players" exact>My Player</NavLink></li>
        {/* <li className="navbar"><NavLink to="/players/new" exact>Create new player</NavLink></li> */}
-       { loggedIn ? <><p>Logged in as {currentUser.name}</p><Logout/></> : null}
       </ul>
+      { loggedIn ? <><p>Logged in as {currentUser.name}</p><Logout/></> : null}
+
     </div>
   );
 };

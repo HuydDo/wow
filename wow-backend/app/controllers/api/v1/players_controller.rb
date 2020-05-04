@@ -13,7 +13,7 @@ class Api::V1::PlayersController < ApplicationController
     player = Player.new(player_params)
     # binding.pry
     if player.save
-      # session[:player_id] = player.id
+      session[:player_id] = player.id
       render json: player, status: :created
     else
       resp = {
