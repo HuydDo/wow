@@ -36,19 +36,19 @@ class Player extends React.Component {
     render() {
       const player = this.props.players.filter(player => player.id === parseInt(this.props.match.params.id))[0]
       return ( 
-        <div>
-            <h3> {player ? 'Player Name' : null } </h3> {
-            /* {player ? null :<Redirect to='/players'/>} */ } 
-            <p> {player ? player.name : null } {' '} 
-            { player && < button onClick = { () => this.handleDelete(player)} > Delete </button>} 
-            { player && < button onClick = { () => this.handleEdit(player)} > Edit </button>} 
-            </p> 
-            {this.state.showPlayerInput && player && <PlayerInput player={player} type ="Edit" />}
-            {this.state.showPlayers && player && <Redirect to = '/' / >} 
-            {player && <CharactersContainer player = {player} />}
-         </div>
-        )
-       }
+      <div>
+          <h3> {player ? 'Player Name' : null } </h3> {
+          /* {player ? null :<Redirect to='/players'/>} */ } 
+          <p> {player ? player.name : null } {' '} 
+          { player && < button onClick = { () => this.handleDelete(player)} > Delete </button>} 
+          { player && < button onClick = { () => this.handleEdit(player)} > Edit </button>} 
+          </p> 
+          {this.state.showPlayerInput && player && <PlayerInput player={player} type ="Edit" />}
+          {this.state.showPlayers && player && <Redirect to = '/' / >} 
+          {player && <CharactersContainer player = {player} />}
+       </div>
+      )
+    }
 }
 
 export default connect(null, {deletePlayer})(Player)
