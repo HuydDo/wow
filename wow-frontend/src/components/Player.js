@@ -37,8 +37,8 @@ class Player extends React.Component {
       const player = this.props.players.filter(player => player.id === parseInt(this.props.match.params.id))[0]
       return ( 
       <div>
-          <h3> {player ? 'Player Name' : null } </h3> {
-          /* {player ? null :<Redirect to='/players'/>} */ } 
+          <h3> {player ? 'Player Name' : null } </h3>
+           {  /* {player ? null :<Redirect to='/players'/>} */ } 
           <p> {player ? player.name : null } {' '} 
           { player && < button onClick = { () => this.handleDelete(player)} > Delete </button>} 
           { player && < button onClick = { () => this.handleEdit(player)} > Edit </button>} 

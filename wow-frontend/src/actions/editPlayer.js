@@ -3,8 +3,7 @@ export const editPlayer = (data) => {
   return (dispatch) => {
    fetch(`http://localhost:3000/api/v1/players/${data.id}`, {
      headers: {
-       'Content-Type': 'application/json', 
-      //  'Accept': 'application/json'
+       'Content-Type': 'application/json'
      },
      method: 'PATCH', 
      body: JSON.stringify(data)

@@ -74,7 +74,6 @@ export const signup = credentials => {
         alert(response.error)
       } else {
         dispatch(setCurrentUser(response))
-        // console.log(response)
         dispatch(resetSignupForm())
       }
     }

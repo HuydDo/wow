@@ -7,7 +7,7 @@ export const setMyCharacters = characters =>{
 }
 
 
-//asyns actions
+//asynchronous actions
 export const getMyCharacters = (playerId) =>{
  
     return dispatch => {
@@ -23,7 +23,6 @@ export const getMyCharacters = (playerId) =>{
           if (response.error) {
             alert(response.error)
           } else {
-            // console.log(response)
             dispatch(setMyCharacters(response))
           }
         })

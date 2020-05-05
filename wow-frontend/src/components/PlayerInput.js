@@ -2,15 +2,10 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {addPlayer} from '../actions/addPlayer'
 import {editPlayer} from '../actions/editPlayer'
-
 import {Redirect} from 'react-router-dom'
 
 class PlayerInput extends Component {
 
-  // state = {
-  //   name: ''
-  // }
-  // 
   constructor(props) {
     super(props)
     this.state = {

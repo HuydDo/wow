@@ -28,9 +28,7 @@ const Login = ({loginFormData, updateLoginForm, login}) => {
       <input type= "submit" value="Log In"/>
     </form>
   )
-
 }
-
 
 const mapStateToProps = state => {
   return {

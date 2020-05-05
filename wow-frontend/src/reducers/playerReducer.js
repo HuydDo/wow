@@ -1,8 +1,3 @@
-// import cuid from 'cuid';
-// export const cuidFn = cuid;
-
-// import { compose } from "redux"
-
 export default function playerReducer(state = {players: []}, action) {
 
   let players = (state) => state.players.map(player => {
@@ -21,11 +16,6 @@ export default function playerReducer(state = {players: []}, action) {
     case 'ADD_PLAYER':
       return {...state, players: [...state.players, action.payload] }
     
-      // const player = {name: action.payload.name, id: cuidFn()}
-      // return {
-      //   ...state, players: [ ...state.players, player]
-      // }
-
     case 'ADD_CHARACTER':
       return {...state, players: players(state)}
       

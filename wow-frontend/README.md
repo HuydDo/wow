@@ -52,3 +52,21 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/HuydDo
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+```
+index
+  |__App
+	|__NavBar
+	|   |__Logout
+	|__Home
+	|__About
+	|__Login
+	|__Signup
+	|__PlayersContainer
+  		|__Player
+  		|     |__CharactersContainer
+  		|     |		|__CharacterInput
+  		|     |		|__Characters
+  	    |     |	         |__Character
+  		|     |__PlayerInput	
+  		|__Players
