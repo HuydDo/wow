@@ -44,7 +44,7 @@ class Player extends React.Component {
             { player && < button onClick = { () => this.handleEdit(player)} > Edit </button>} 
             </p> 
             {this.state.showPlayerInput && player && <PlayerInput player={player} type ="Edit" />}
-            {this.state.showPlayers && player && <Redirect to = '/players' / >} 
+            {this.state.showPlayers && player && <Redirect to = '/' / >} 
             {player && <CharactersContainer player = {player} />}
          </div>
         )

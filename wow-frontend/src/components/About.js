@@ -4,9 +4,10 @@ const About = () => {
   return (
     <div>
       <p>
-        This App will let the user retrieves a player or creates a new player. 
-        User has an option to delete or edit their player name. 
-        Also, the user can create or delete their character(s).
+        This App will ask the user to log in or sign up with new player 
+        by providing name, username, and password. The user can click on 
+        the player link, so they can delete or edit the player's name. 
+        Also, the user can create or delete player's character(s).
       </p>
     </div>
   );
