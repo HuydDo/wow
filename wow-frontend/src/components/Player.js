@@ -6,7 +6,7 @@ import PlayerInput from './PlayerInput'
 
 import {connect} from 'react-redux'
 import {deletePlayer} from '../actions/deletePlayer'
-
+import Like from './Like'
 class Player extends React.Component {
 
     constructor(props) {
@@ -38,7 +38,6 @@ class Player extends React.Component {
       return ( 
       <div>
           <h3> {player ? 'Player Name' : null } </h3>
-           {  /* {player ? null :<Redirect to='/players'/>} */ } 
           <p> {player ? player.name : null } {' '} 
           { player && < button onClick = { () => this.handleDelete(player)} > Delete </button>} 
           { player && < button onClick = { () => this.handleEdit(player)} > Edit </button>} 
@@ -46,6 +45,7 @@ class Player extends React.Component {
           {this.state.showPlayerInput && player && <PlayerInput player={player} type ="Edit" />}
           {this.state.showPlayers && player && <Redirect to = '/' / >} 
           {player && <CharactersContainer player = {player} />}
+          <Like />
        </div>
       )
     }

@@ -97,7 +97,7 @@ export const getCurrentUser = () => {
       if (response.error){
         alert(response.error)
       } else {
-        console.log("current user:", response)
+        // console.log("current user:", response)
         dispatch(setCurrentUser(response))
         dispatch(getMyCharacters(response.id))
 

@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import {fetchPlayers} from '../actions/fetchPlayers'
 
 class Players extends React.Component{  
+  
   componentDidMount(){
     this.props.fetchPlayers()
   }
@@ -23,12 +24,10 @@ class Players extends React.Component{
     //names must be equal
     return 0;
   })
-  const { players , currentUser, loggedIn} = this.props
-  console.log("current user", currentUser)
-  
-  // let currPlayer = (this.props.players.length > 0 && this.props.currentUser) ? 
-  //   this.props.players.filter(player => player.id === this.props.currentUser.id) : ""
 
+  const { players , currentUser, loggedIn} = this.props
+  // console.log("current user", currentUser)
+  
   let currPlayer = (players.length > 0 && currentUser) ? 
     players.filter(player => player.id === currentUser.id) : ""
 
@@ -39,7 +38,7 @@ class Players extends React.Component{
   return (
     <div>
       {/* { loggedIn ? <p>Your username: {currentUser.username} </p> :<p>no one is logged in</p>}  */}
-      {/* { loggedIn && currentUser.username=== "admin" ? <p>admin access</p> : <p>regular access</p>} */}
+      { loggedIn && currentUser.username=== "admin" ? <p>admin access</p> : null}
       <h3>{this.props.currentUser  ? 'Player Name' : null}</h3>
       { player && player.map(player =>
         <li key={player.id} className="players">
