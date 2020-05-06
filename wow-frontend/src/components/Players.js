@@ -38,8 +38,8 @@ class Players extends React.Component{
   return (
     <div>
       {/* { loggedIn ? <p>Your username: {currentUser.username} </p> :<p>no one is logged in</p>}  */}
-      { loggedIn && currentUser.username=== "admin" ? <p>admin access</p> : null}
-      <h3>{this.props.currentUser  ? 'Player Name' : null}</h3>
+      { loggedIn && currentUser.username === "admin" ? <p>admin access</p> : null}
+      {this.props.currentUser ? <h3>Player Name</h3> : null}
       { player && player.map(player =>
         <li key={player.id} className="players">
           <Link to={`/players/${player.id}`}>{player.name}</Link> 

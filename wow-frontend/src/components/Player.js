@@ -32,15 +32,18 @@ class Player extends React.Component {
         showPlayerInput: !this.state.showPlayerInput
       })
     }
-
+     
     render() {
+      
       const player = this.props.players.filter(player => player.id === parseInt(this.props.match.params.id))[0]
+      console.log(player)
       return ( 
       <div>
-          <h3> {player ? 'Player Name' : null } </h3>
+          {player ? <h3>Player Name</h3> : null }
           <p> {player ? player.name : null } {' '} 
-          { player && < button onClick = { () => this.handleDelete(player)} > Delete </button>} 
-          { player && < button onClick = { () => this.handleEdit(player)} > Edit </button>} 
+           { player && < button onClick = { () => this.handleDelete(player)} > Delete </button>} 
+           {/* { player && < button onClick = { () => this.handleEdit()} > Edit </button>}  */}
+           { player && < button onClick = { this.handleEdit } > Edit </button>} 
           </p> 
           {this.state.showPlayerInput && player && <PlayerInput player={player} type ="Edit" />}
           {this.state.showPlayers && player && <Redirect to = '/' / >} 

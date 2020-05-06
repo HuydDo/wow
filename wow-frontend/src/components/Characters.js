@@ -12,13 +12,13 @@ const Characters = (props) => {
   return ( (nameA > nameB) ? 1 : (nameA === nameB) ? ((genderA > genderB) ? 1 : -1) : -1 )
     
   })
+  // console.log(props)
 
   return ( 
     <div>
       <h3>{props.characters.length !== 0 ? 'Characters' : null} </h3> 
-      {
-        props.characters && props.characters.map( c =>  <Character id={c.id} c={c} key={c.id}/>)
-      }
+      <p>{props.characters.length > 0 ? `You have ${props.characters.length} character(s)` : 'You have no character'}</p>
+      { props.characters && props.characters.map( c =>  <Character id={c.id} c={c} key={c.id}/>)}
     </div>
   )
 }

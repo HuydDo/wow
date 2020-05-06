@@ -1,29 +1,32 @@
 import React, {Component} from 'react'
 
 class Like extends Component {
+  state = ({
+    count: 0,
+    show: true
+  })
+  // constructor(props){
+  //   super(props)
+  //   this.state = ({
+  //     count: 0,
+  //     show: true
+  //   })
+  // }
 
-  constructor(props){
-    super(props)
-    this.state = ({
-      count: 0,
-      show: true
-    })
-  }
-
-  handleAdd = ()=>{
+  handleAdd = () => {
     this.setState({
        count: this.state.count + 1
      })
    }
 
-   handleSubtract = ()=>{
+   handleSubtract = () => {
      this.setState({
         count: this.state.count - 1
       })
    }
 
-  ToggleClick = () =>{
-    this.setState({
+  ToggleClick = () => {
+    this.setState({ 
       show: !this.state.show
     })
   }
