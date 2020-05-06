@@ -17,6 +17,7 @@ class App extends React.Component {
 
   render(){
     const { loggedIn } = this.props
+    // console.log("current user", this.props.getCurrentUser)
     return (
       <div className="App">
         { loggedIn ? <NavBar/> : <Home/> }
@@ -33,8 +34,7 @@ class App extends React.Component {
 
 const mapStateToProps = state => {
   return ({
-    loggedIn: !!state.currentUser,
-    trips: state.myTrips
+    loggedIn: !!state.currentUser
   })
 }
 export default connect(mapStateToProps, {getCurrentUser})(App)

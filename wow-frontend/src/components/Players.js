@@ -23,16 +23,29 @@ class Players extends React.Component{
     //names must be equal
     return 0;
   })
-  let currPlayers = (this.props.players.length >0 && this.props.currentUser) ? 
-    this.props.players.filter(player => player.id === this.props.currentUser.id) : ""
+  const { players , currentUser, loggedIn} = this.props
+  console.log("current user", currentUser)
+  
+  // let currPlayer = (this.props.players.length > 0 && this.props.currentUser) ? 
+  //   this.props.players.filter(player => player.id === this.props.currentUser.id) : ""
 
+  let currPlayer = (players.length > 0 && currentUser) ? 
+    players.filter(player => player.id === currentUser.id) : ""
+
+  let player = (players.length > 0 && currentUser && currentUser.username === "admin") ? 
+    players : currPlayer 
+  // console.log("Player(s):", player)
+  
   return (
     <div>
+      {/* { loggedIn ? <p>Your username: {currentUser.username} </p> :<p>no one is logged in</p>}  */}
+      {/* { loggedIn && currentUser.username=== "admin" ? <p>admin access</p> : <p>regular access</p>} */}
       <h3>{this.props.currentUser  ? 'Player Name' : null}</h3>
-      { currPlayers && currPlayers.map(player =>
+      { player && player.map(player =>
         <li key={player.id} className="players">
           <Link to={`/players/${player.id}`}>{player.name}</Link> 
-        </li> )}
+        </li> 
+      )}
     </div> 
   ) 
  } 
@@ -42,6 +55,7 @@ const mapStateToProps = (state) => {
     return ({
       currentUser: state.currentUser,
       players: state.playerReducer.players,
+      loggedIn: !!state.currentUser
     })
 }
 
