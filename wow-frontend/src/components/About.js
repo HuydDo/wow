@@ -4,10 +4,9 @@ const About = () => {
   return (
     <div>
       <p>
-        This App will ask the user to log in or sign up with new player 
-        by providing name, username, and password. The user can click on 
-        the player link, so they can delete or edit the player's name. 
-        Also, the user can create or delete player's character(s).
+        Welcome to World of Warcraft.  You can log in or sign up as a new player.
+        You can delete or edit the your player by clicking My Player. Then, you
+        can create or delete your character(s).
       </p>
     </div>
   );

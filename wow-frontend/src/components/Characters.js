@@ -16,8 +16,7 @@ const Characters = (props) => {
 
   return ( 
     <div>
-      <h3>{props.characters.length !== 0 ? 'Characters' : null} </h3> 
-      <p>{props.characters.length > 0 ? `You have ${props.characters.length} character(s)` : 'You have no character'}</p>
+      <h3>{props.characters.length > 0 ? 'Characters' : null} </h3> 
       { props.characters && props.characters.map( c =>  <Character id={c.id} c={c} key={c.id}/>)}
     </div>
   )

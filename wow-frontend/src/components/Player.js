@@ -6,7 +6,6 @@ import PlayerInput from './PlayerInput'
 
 import {connect} from 'react-redux'
 import {deletePlayer} from '../actions/deletePlayer'
-import Like from './Like'
 class Player extends React.Component {
 
     constructor(props) {
@@ -36,7 +35,7 @@ class Player extends React.Component {
     render() {
       
       const player = this.props.players.filter(player => player.id === parseInt(this.props.match.params.id))[0]
-      console.log(player)
+      // console.log(player)
       return ( 
       <div>
           {player ? <h3>Player Name</h3> : null }
@@ -48,7 +47,6 @@ class Player extends React.Component {
           {this.state.showPlayerInput && player && <PlayerInput player={player} type ="Edit" />}
           {this.state.showPlayers && player && <Redirect to = '/' / >} 
           {player && <CharactersContainer player = {player} />}
-          <Like />
        </div>
       )
     }
