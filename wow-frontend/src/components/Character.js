@@ -1,7 +1,7 @@
 import React from 'react'
 import {deleteCharacter} from '../actions/deleteCharacter'
 import {connect} from 'react-redux'
-
+import Like from './Like'
 const Character = (props) =>{
   
   const handleDelete = (character) => {
@@ -13,7 +13,8 @@ const Character = (props) =>{
        <p> {props.c.name} - {props.c.gender} -
         {props.c.race} - {props.c.character_class} 
         <button onClick = {() => handleDelete(props.c)}>Delete</button>
-       </p> 
+        <Like />
+     </p> 
       </li>
    </div> 
   )
