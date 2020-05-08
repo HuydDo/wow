@@ -51,11 +51,18 @@ class Players extends React.Component{
 }
 
 const mapStateToProps = (state) => {
-    return ({
+    return {
       currentUser: state.currentUser,
       players: state.playerReducer.players,
       loggedIn: !!state.currentUser
-    })
+    }
 }
+
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     fetchPlayers: () => dispatch(fetchPlayers())
+//   }
+// }
+// export default connect(mapStateToProps, mapDispatchToProps)(Players)
 
 export default connect(mapStateToProps, {fetchPlayers})(Players)

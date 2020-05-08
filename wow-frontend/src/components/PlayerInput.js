@@ -42,7 +42,7 @@ class PlayerInput extends Component {
   render() {
     return ( 
       <div>
-        <h3> {this.props.type === "Edit" ? 'Edit player' : 'Create new player'}</h3> 
+        <h3> {this.props.type === "Edit" ? 'Edit player' : ''}</h3> 
         <form onSubmit = {this.handleSubmit}>
         <label> Player Name:</label> 
         <input type = 'text' placeholder = 'name' value = {this.state.name}
