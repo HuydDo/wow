@@ -16,7 +16,6 @@ const Characters = (props) => {
 
   return ( 
     <div>
-      Characters.js component add inside div 2 line
       <p>{props.characters.length > 0 ? `You have ${props.characters.length} character(s)` : 'You have no character'}</p>
       <h3>{props.characters.length > 0 ? 'Characters' : null} </h3> 
       { props.characters && props.characters.map( c =>  <Character id={c.id} c={c} key={c.id}/>)}
