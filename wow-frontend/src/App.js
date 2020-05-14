@@ -9,10 +9,13 @@ import About from './components/About';
 import { getCurrentUser } from './actions/currentUser'
 import Login from './components/Login'
 import Signup from './components/Signup'
+
+import { fetchWow } from './actions/fetchWow'
 class App extends React.Component {
   
   componentDidMount(){
     this.props.getCurrentUser()
+    // this.props.fetchWow()
   }
 
   render(){
@@ -36,4 +39,6 @@ const mapStateToProps = state => {
     loggedIn: !!state.currentUser
   })
 }
-export default connect(mapStateToProps, {getCurrentUser})(App)
+// export default connect(mapStateToProps, {getCurrentUser})(App)
+
+export default connect(mapStateToProps, {getCurrentUser, fetchWow})(App)
