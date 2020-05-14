@@ -10,7 +10,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import currentUser from './reducers/currentUser'
 import loginForm from './reducers/loginForm'
 import signupForm from './reducers/signupForm'
-
+require('dotenv').config()
 const reducer = combineReducers({
   playerReducer,
   currentUser,
