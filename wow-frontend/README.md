@@ -53,6 +53,7 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/HuydDo
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
+[React Redux Project Blog](https://medium.com/@huydo_78882/react-redux-project-6c6fbcb554b7)
 ```
 index
   |__App
