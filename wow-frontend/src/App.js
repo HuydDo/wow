@@ -17,7 +17,6 @@ class App extends React.Component {
 
   render(){
     const { loggedIn } = this.props
-    // console.log("current user", this.props.getCurrentUser)
     return (
       <div className="App">
         { loggedIn ? <NavBar/> : <Home/> }

@@ -4,7 +4,6 @@ import { updateSignupForm } from '../actions/signupForm'
 import { signup } from '../actions/currentUser'
 
 const Signup = ({signupFormData, updateSignupForm, signup}) => {
-  // console.log(signupFormData)
   const handleChange = event => {
     const {name, value } = event.target
     const updatedFormInfo = {

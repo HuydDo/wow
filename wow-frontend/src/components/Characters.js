@@ -12,7 +12,6 @@ const Characters = (props) => {
   return ( (nameA > nameB) ? 1 : (nameA === nameB) ? ((genderA > genderB) ? 1 : -1) : -1 )
     
   })
-  // console.log(props)
 
   return ( 
     <div>

@@ -37,5 +37,4 @@ const mapStateToProps = state => {
   }
 }
 
-// export default connect(mapStateToProps, {updateLoginForm, login})(Login)
 export default withRouter(connect(mapStateToProps, {updateLoginForm, login})(Login))

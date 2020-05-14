@@ -14,7 +14,6 @@ class Players extends React.Component{
     let nameA = a.name.toUpperCase(); // ignore upper and lowercase
     let nameB = b.name.toUpperCase(); // ignore upper and lowercase
     
-    // return ((nameA>nameB) ? 1 : -1)
     if (nameA < nameB) {
       return -1;
     }
@@ -26,18 +25,15 @@ class Players extends React.Component{
   })
 
   const { players , currentUser, loggedIn} = this.props
-  // console.log("current user", currentUser)
   
   let currPlayer = (players.length > 0 && currentUser) ? 
     players.filter(player => player.id === currentUser.id) : ""
 
   let player = (players.length > 0 && currentUser && currentUser.username === "admin") ? 
     players : currPlayer 
-  // console.log("Player(s):", player)
   
   return (
     <div>
-      {/* { loggedIn ? <p>Your username: {currentUser.username} </p> :<p>no one is logged in</p>}  */}
       { loggedIn && currentUser.username === "admin" ? <p>admin access</p> : null}
       {this.props.currentUser ? <h3>Player Name</h3> : null}
       { player && player.map(player =>
@@ -57,12 +53,5 @@ const mapStateToProps = (state) => {
       loggedIn: !!state.currentUser
     }
 }
-
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     fetchPlayers: () => dispatch(fetchPlayers())
-//   }
-// }
-// export default connect(mapStateToProps, mapDispatchToProps)(Players)
 
 export default connect(mapStateToProps, {fetchPlayers})(Players)

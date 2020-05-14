@@ -34,7 +34,6 @@ export const login = credentials => {
         alert(response.error)
       } else {
         dispatch(setCurrentUser(response))
-        // console.log(response)
         dispatch(resetLoginForm())
       }
     }
@@ -97,7 +96,6 @@ export const getCurrentUser = () => {
       if (response.error){
         alert(response.error)
       } else {
-        // console.log("current user:", response)
         dispatch(setCurrentUser(response))
         dispatch(getMyCharacters(response.id))
 
