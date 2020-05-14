@@ -9,7 +9,6 @@
 Player.delete_all
 Character.delete_all
 
-# Player.create([{name: 'BlueSpirit'},{name: 'Panda'},{name: 'Bamboo'}])
 Player.create([{name: 'BlueSpirit',username: "bluespirit", password: "password"},
                 {name: 'Panda',username: "panda", password: "password"},
                 {name: 'Bamboo',username: "bamboo", password: "password"}])

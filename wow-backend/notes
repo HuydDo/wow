@@ -88,5 +88,4 @@ add binding.pry in Player controller create
    params[:session][:username]
 
    rails g migration RenamePlayerPasswordToPasswordDigest
-
    player.valid?
