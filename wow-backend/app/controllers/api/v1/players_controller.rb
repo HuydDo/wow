@@ -11,7 +11,6 @@ class Api::V1::PlayersController < ApplicationController
 
   def create
     player = Player.new(player_params)
-    # binding.pry
     if player.save
       session[:player_id] = player.id
       render json: player, status: :created
@@ -38,9 +37,6 @@ class Api::V1::PlayersController < ApplicationController
   end
 
   def update
-    
-    # @player.update(name: params["player"]["name"])
-    # if @player.update(name: params["player"]["name"]) 
     if @player.update(player_params)
       render json: @player
     else

@@ -2,21 +2,8 @@ class Api::V1::CharactersController < ApplicationController
 
   before_action :set_player, only: [:index, :create]
 
-  # before_action :set_character, only: [:show, :update, :destory]
-
-
   def index
-    # if @player
-    #   characters = @player.characters
-    # else 
-      # characters = Character.all
-    # end
-    
-    # characters = Character.all
-    # render json: characters
-
     if logged_in?
-      # binding pry
       @characters = current_user.characters
       render json: @characters
     else
@@ -27,15 +14,12 @@ class Api::V1::CharactersController < ApplicationController
 
   def show
     character = Character.find(params[:id])
-    # character = @player.characters.find_by(id: params[:id])
     render json: character
   end
 
   def create
     character = @player.characters.new(character_params)
-    # character = Character.new(character_params)
     if character.save
-      # render json: character
       render json: @player
     else
       render json: {error: 'Fail to create character'}
