@@ -9,7 +9,6 @@ belongs_to :player
   :name - string, :race - string, 
   :character_class - string
 
-
 --- terminal cmd
 
 create-react-app wow-frontend
@@ -89,6 +88,5 @@ add binding.pry in Player controller create
    params[:session][:username]
 
    rails g migration RenamePlayerPasswordToPasswordDigest
-   1:31
 
    player.valid?
