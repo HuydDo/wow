@@ -1,0 +1,22 @@
+{
+  
+  
+  "name": "wow-application",
+  "version": "1.0.0",
+  "description": "The best package",
+  "main": "index.js",
+  "repository": "git@github.com:HuydDo/wow.git",
+  "author": "Yarn Contributor",
+  "license": "MIT",
+  "scripts": {
+    "build": "cd client && yarn install && yarn build && cd ..",
+    "deploy": "cp -a client/build/. public/",
+    "postinstall": "yarn build && yarn deploy && echo 'Client built!'"
+  },
+  "engines": {
+    "yarn": "1.21.1",
+    "npm": "6.14.4",
+    "node": "10.16.2"
+  }
+}
+
