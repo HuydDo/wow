@@ -45,6 +45,11 @@ The setups steps expect following tools installed on the system.
 ## Usage
   If you use seed file for database, there are couple players/character were created.
 
+## Run
+  Change dir to wow-backend in terminal and run
+  `rails s`
+  Change dir to wow-fronend in terminal and run
+  `npm start`
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/HuydDo/wow. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
