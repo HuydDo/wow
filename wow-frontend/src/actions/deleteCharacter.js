@@ -1,7 +1,9 @@
+const apiURL = 'http://localhost:3000'
 export const deleteCharacter = (characterId, playerId) =>{
 
   return(dispatch) => {
-    fetch(`http://localhost:3000/api/v1/players/${playerId}/characters/${characterId}`, {
+    fetch(`${apiURL}/api/v1/players/${playerId}/characters/${characterId}`, {
+      // fetch(`/api/v1/players/${playerId}/characters/${characterId}`, {  
       method: 'DELETE'
     })
     .then(response => response.json())

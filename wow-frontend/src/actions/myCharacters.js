@@ -1,3 +1,4 @@
+const apiURL = 'http://localhost:3000'
 //synchronous actions
 export const setMyCharacters = characters =>{
   return {
@@ -11,8 +12,10 @@ export const setMyCharacters = characters =>{
 export const getMyCharacters = (playerId) =>{
  
     return dispatch => {
-      return fetch(`http://localhost:3000/api/v1/players/${playerId}/characters`, {
-        credentials: "include",
+      return fetch(`${apiURL}/api/v1/players/${playerId}/characters`, {
+      // return fetch(`/api/v1/players/${playerId}/characters`, {
+
+      credentials: "include",
         method: "GET",
         headers: {
           "Content-Type": "application/json"

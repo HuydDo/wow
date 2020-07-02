@@ -1,6 +1,8 @@
+const apiURL = 'http://localhost:3000'
 export const addPlayer = (data) => {
   return (dispatch) => {
-   fetch('http://localhost:3000/api/v1/players', {
+   fetch(`${apiURL}/api/v1/players`, {
+  //  fetch(`/api/v1/players`, {
      headers: {
        'Content-Type': 'application/json'
      },
