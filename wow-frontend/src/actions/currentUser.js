@@ -1,7 +1,8 @@
 import { resetLoginForm } from './loginForm'
 import { resetSignupForm } from './signupForm'
 import { getMyCharacters } from './myCharacters'
-const apiURL = 'http://localhost:3000'
+// const apiURL = 'http://localhost:3000'
+const apiURL = process.env.REACT_APP_BASE_API_URL
 //synchronous action creators
 export const setCurrentUser = user => {
   return {

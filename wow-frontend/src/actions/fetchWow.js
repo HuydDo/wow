@@ -20,22 +20,22 @@
 //   });
 // }
 
-const blizzard = require('blizzard.js').initialize({
-  key: process.env.BLIZZARD_CLIENT_ID,
-  secret: process.env.BLIZZARD_CLIENT_SECRET,
-  origin: 'us',
-  locale: 'en_US'
-});
+// const blizzard = require('blizzard.js').initialize({
+//   key: process.env.BLIZZARD_CLIENT_ID,
+//   secret: process.env.BLIZZARD_CLIENT_SECRET,
+//   origin: 'us',
+//   locale: 'en_US'
+// });
 
-export async function fetchWow () {
-  try {
-    await blizzard.getApplicationToken()
-      .then(response => {
-        blizzard.defaults.token = response.data.access_token
-      });
-    const item = await blizzard.wow.item({ id: 168185 });
-    console.log(item)
-  } catch (err) {
-    console.error(err);
-  }
-}
+// export async function fetchWow () {
+//   try {
+//     await blizzard.getApplicationToken()
+//       .then(response => {
+//         blizzard.defaults.token = response.data.access_token
+//       });
+//     const item = await blizzard.wow.item({ id: 168185 });
+//     console.log(item)
+//   } catch (err) {
+//     console.error(err);
+//   }
+// }

@@ -1,4 +1,5 @@
-const apiURL = 'http://localhost:3000'
+// const apiURL = 'http://localhost:3000'
+const apiURL = process.env.REACT_APP_BASE_API_URL
 export const addPlayer = (data) => {
   return (dispatch) => {
    fetch(`${apiURL}/api/v1/players`, {
